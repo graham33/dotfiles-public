@@ -3,6 +3,9 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+; modes
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))
+
 ; theme
 (load-theme 'zenburn t)
 
