@@ -6,6 +6,7 @@
 
 - link:
     ~/.bash_custom: bash_custom
+    ~/.gitconfig: gitconfig
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
