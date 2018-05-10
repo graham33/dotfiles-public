@@ -6,9 +6,9 @@
 
 - link:
     ~/.bash_custom: bash_custom
-    ~/.emacs: emacs
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
+    ~/.zshrc: zshrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
