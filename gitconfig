@@ -2,3 +2,5 @@
 [user]
 	name = Graham Bennett
 	email = graham@grahambennett.org
+[push]
+	default = simple
