@@ -7,6 +7,7 @@
 - link:
     ~/.bash_custom: bash_custom
     ~/.gitconfig: gitconfig
+    ~/.octaverc: octaverc
     ~/.profile: profile
     ~/.spacemacs: spacemacs
     ~/.ssh/config: ssh/config
