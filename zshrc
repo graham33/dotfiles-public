@@ -79,6 +79,11 @@ source $ZSH/oh-my-zsh.sh
 # fi
 export EDITOR=vim
 
+if [[ "$TERM" == "xterm" ]]
+then
+    TERM=xterm-256color
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
