@@ -8,6 +8,7 @@
         bat
         emacs
         lxterminal
+        ripgrep
         tmux
       ];
     };
