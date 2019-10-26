@@ -5,15 +5,17 @@
 - clean: ['~']
 
 - link:
-    ~/.bash_custom: bash_custom
-    ~/.gitconfig: gitconfig
-    ~/.octaverc: octaverc
-    ~/.profile: profile
-    ~/.spacemacs: spacemacs
+    ~/.bash_custom:
+    ~/.config/i3/config: config/i3/config
+    ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
+    ~/.gitconfig:
+    ~/.octaverc:
+    ~/.profile:
+    ~/.spacemacs:
     ~/.ssh/config: ssh/config
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.tmux.conf:
+    ~/.vimrc:
+    ~/.zshrc:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
