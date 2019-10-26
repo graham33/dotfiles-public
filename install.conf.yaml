@@ -8,6 +8,7 @@
     ~/.bash_custom:
     ~/.config/i3/config: config/i3/config
     ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
+    ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
     ~/.gitconfig:
     ~/.octaverc:
     ~/.profile:
