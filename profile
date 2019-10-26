@@ -15,7 +15,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-# set PATH so it includes user's private bin directories
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-if [ -e /home/graham/.nix-profile/etc/profile.d/nix.sh ]; then . /home/graham/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
