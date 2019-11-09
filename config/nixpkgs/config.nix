@@ -1,6 +1,10 @@
 {pkgs}:
 let
-  myCustomWhitelist = with pkgs.stdenv.lib.licenses; [ artistic1 bsd3 gpl2 gpl3 gpl2Plus gpl3Plus lgpl21 lgpl2Plus lgpl21Plus zlib ];
+  myPython = [(pkgs.python3.withPackages (ps: with ps; [
+    boto3
+    numpy
+    pandas
+  ]))];
 in
 {
   allowUnfree = true;
@@ -25,7 +29,7 @@ in
       ] ++ (with nodePackages; [
         create-react-app
         serverless
-      ]);
+      ]) ++ myPython;
     };
   };
 
