@@ -9,6 +9,9 @@ let
     numpy
     pandas
   ]))];
+  myTexlive = (pkgs.texlive.combine {
+    inherit (pkgs.texlive) lastpage newlfm patchcmd scheme-small titling;
+  });
 in
 {
   allowUnfree = true;
@@ -29,6 +32,7 @@ in
         freerdp
         gimp
         gnome3.nautilus
+        gnumake
         google-chrome
         gopro
         gpsbabel
@@ -36,6 +40,7 @@ in
         jmtpfs
         lxterminal
         mpv
+        myTexlive
         nodejs
         remmina
         ripgrep
