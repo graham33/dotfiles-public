@@ -28,11 +28,16 @@ in
         exiftool
         freerdp
         gimp
+        gnome3.nautilus
         google-chrome
+        gopro
+        gpsbabel
         imagemagick
+        jmtpfs
         lxterminal
+        mpv
         nodejs
-	remmina
+        remmina
         ripgrep
         tmux
         unzip
