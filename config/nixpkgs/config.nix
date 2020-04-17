@@ -10,7 +10,7 @@ let
     pandas
   ]))];
   myTexlive = (pkgs.texlive.combine {
-    inherit (pkgs.texlive) lastpage newlfm patchcmd scheme-small titling;
+    inherit (pkgs.texlive) crossword lastpage newlfm patchcmd scheme-small titling;
   });
 in
 {
@@ -41,6 +41,7 @@ in
         lxterminal
         mpv
         myTexlive
+        nmap
         nodejs
         remmina
         ripgrep
