@@ -38,6 +38,7 @@ in
         gpsbabel
         imagemagick
         jmtpfs
+        libreoffice
         lxterminal
         mpv
         myTexlive
@@ -47,6 +48,7 @@ in
         ripgrep
         tmux
         unzip
+        whois
       ] ++ (with nodePackages; [
         create-react-app
         serverless
