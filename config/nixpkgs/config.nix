@@ -1,5 +1,7 @@
 {pkgs}:
 let
+  myMpv = pkgs.mpv.override { cddaSupport = true; };
+
   myPython2 = [(pkgs.python2.withPackages (ps: with ps; [
     boto
   ]))];
@@ -56,7 +58,7 @@ in
         jmtpfs
         libreoffice
         lxterminal
-        mpv
+        myMpv
         myScripts
         myTexlive
         nmap
