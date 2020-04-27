@@ -75,7 +75,7 @@ in
         zoom-us
       ] ++ (with nodePackages; [
         create-react-app
-        #serverless
+        serverless
       ]) ++ myPython2 ++ myPython3;
     };
   };
