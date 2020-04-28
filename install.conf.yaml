@@ -11,6 +11,7 @@
     ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
     ~/.gitconfig:
     ~/.octaverc:
+    ~/.oh-my-zsh/custom: oh-my-zsh/custom
     ~/.profile:
     ~/.spacemacs:
     ~/.ssh/config: ssh/config
