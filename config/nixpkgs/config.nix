@@ -43,6 +43,7 @@ in
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
+        atftp
         awscli
         bat
         dnsutils
