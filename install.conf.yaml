@@ -10,6 +10,8 @@
     ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
     ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
     ~/.gitconfig:
+    ~/.local/share/remmina/1579007582517.remmina: local/share/remmina/1579007582517.remmina
+    ~/.local/share/remmina/1578960944633.remmina: local/share/remmina/1578960944633.remmina
     ~/.octaverc:
     ~/.oh-my-zsh/custom: oh-my-zsh/custom
     ~/.profile:
