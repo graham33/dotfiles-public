@@ -73,6 +73,7 @@ in
         whois
         xorg.xev
         xorg.xmodmap
+        xss-lock
         zoom-us
       ] ++ (with nodePackages; [
         create-react-app
