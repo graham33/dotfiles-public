@@ -1,0 +1,8 @@
+### Desktop-specific config ###
+font pango:Source Code Pro 10
+
+# screensaver after half an hour
+exec xset s 1800
+# turn of screen after 1hr
+exec xset dpms 0 0 3600
+

@@ -4,23 +4,6 @@
 
 - clean: ['~']
 
-- link:
-    ~/.bash_custom:
-    ~/.config/i3/config: config/i3/config
-    ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
-    ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
-    ~/.gitconfig:
-    ~/.local/share/remmina/1579007582517.remmina: local/share/remmina/1579007582517.remmina
-    ~/.local/share/remmina/1578960944633.remmina: local/share/remmina/1578960944633.remmina
-    ~/.octaverc:
-    ~/.oh-my-zsh/custom: oh-my-zsh/custom
-    ~/.profile:
-    ~/.spacemacs:
-    ~/.ssh/config: ssh/config
-    ~/.tmux.conf:
-    ~/.vimrc:
-    ~/.zshrc:
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - chmod 600 ssh/config
@@ -28,3 +11,27 @@
   - test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   # spacemacs
   - test -d ~/.emacs.d || git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  # create i3 configs
+  - mkdir -p ~/.config/i3
+  - cat config/i3/config.common config/i3/config.laptop > ~/.config/i3/config.laptop
+  - cat config/i3/config.common config/i3/config.desktop > ~/.config/i3/config.desktop
+  # link laptop config by default
+  - test ! -e ~/.config/i3/config && ln -s config.laptop ~/.config/i3/config || true
+
+- link:
+    ~/.bash_custom:
+    ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
+    ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
+    ~/.gitconfig:
+    ~/.local/share/remmina/1579007582517.remmina: local/share/remmina/1579007582517.remmina
+    ~/.local/share/remmina/1578960944633.remmina: local/share/remmina/1578960944633.remmina
+    ~/.octaverc:
+    ~/.oh-my-zsh/custom/themes/robbyrussell.zsh-theme:
+      path: oh-my-zsh/custom/themes/robbyrussell.zsh-theme
+      create: true
+    ~/.profile:
+    ~/.spacemacs:
+    ~/.ssh/config: ssh/config
+    ~/.tmux.conf:
+    ~/.vimrc:
+    ~/.zshrc:
