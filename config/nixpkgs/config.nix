@@ -3,10 +3,13 @@ let
   myMpv = pkgs.mpv.override { cddaSupport = true; };
 
   myPython2 = [(pkgs.python2.withPackages (ps: with ps; [
+    arrow
     boto
+    units
   ]))];
 
   myPython3 = [(pkgs.python3.withPackages (ps: with ps; [
+    arrow
     boto3
     dbus-python
     numpy
@@ -67,8 +70,10 @@ in
         nodejs
         remmina
         ripgrep
+        terraform
         tio
         tmux
+        traceroute
         unzip
         whois
         xorg.xev
