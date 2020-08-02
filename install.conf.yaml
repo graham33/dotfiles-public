@@ -20,11 +20,21 @@
 
 - link:
     ~/.bash_custom:
-    ~/.config/lxterminal/lxterminal.conf: config/lxterminal/lxterminal.conf
-    ~/.config/nixpkgs/config.nix: config/nixpkgs/config.nix
+    ~/.config/lxterminal/lxterminal.conf:
+      create: true
+      path: config/lxterminal/lxterminal.conf
+    ~/.config/nixpkgs/config.nix:
+      create: true
+      path: config/nixpkgs/config.nix
+    ~/.config/nixpkgs/overlays: config/nixpkgs/overlays
+    ~/.config/nixpkgs/packages: config/nixpkgs/packages
     ~/.gitconfig:
-    ~/.local/share/remmina/1579007582517.remmina: local/share/remmina/1579007582517.remmina
-    ~/.local/share/remmina/1578960944633.remmina: local/share/remmina/1578960944633.remmina
+    ~/.local/share/remmina/1579007582517.remmina:
+      create: true
+      path: local/share/remmina/1579007582517.remmina
+    ~/.local/share/remmina/1578960944633.remmina:
+      create: true
+      path: local/share/remmina/1578960944633.remmina
     ~/.octaverc:
     ~/.oh-my-zsh/custom/themes/robbyrussell.zsh-theme:
       path: oh-my-zsh/custom/themes/robbyrussell.zsh-theme

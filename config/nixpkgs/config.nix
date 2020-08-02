@@ -1,4 +1,4 @@
-{pkgs}:
+{pkgs, minimalInstall ? (builtins.getEnv "NIXPKGS_MINIMAL_INSTALL" != "")}:
 let
   myMpv = pkgs.mpv.override { cddaSupport = true; };
 
@@ -8,13 +8,20 @@ let
     units
   ]))];
 
+  python-rtmidi = pkgs.callPackage packages/python-rtmidi.nix { inherit (pkgs.python3Packages) alabaster buildPythonPackage fetchPypi flake8 tox; isPy27 = false; };
+
   myPython3 = [(pkgs.python3.withPackages (ps: with ps; [
     arrow
     boto3
+    click
     dbus-python
     numpy
     pandas
+    pip
+    pytest
+    python-rtmidi
     xlib
+    yapf
   ]))];
 
   myTexlive = (pkgs.texlive.combine {
@@ -34,6 +41,13 @@ let
       cp $src/* $out/bin
     '';
   };
+
+  pypi2nix = import (pkgs.fetchgit {
+    url = "https://github.com/nix-community/pypi2nix";
+    # adjust rev and sha256 to desired version
+    rev = "v2.0.0";
+    sha256 = "sha256:1mrvbm78jnk7m44gvpa7l2iwrjiv9584f14vlcw9p334zxknpsfr";
+  }) {};
 in
 {
   allowUnfree = true;
@@ -65,9 +79,10 @@ in
         lxterminal
         myMpv
         myScripts
-        myTexlive
+        nix
         nmap
         nodejs
+        pypi2nix
         remmina
         ripgrep
         terraform
@@ -83,7 +98,8 @@ in
       ] ++ (with nodePackages; [
         create-react-app
         serverless
-      ]) ++ myPython2 ++ myPython3;
+      ]) ++ myPython2 ++ myPython3
+        ++ pkgs.stdenv.lib.optionals (!minimalInstall) [myTexlive];
     };
   };
 

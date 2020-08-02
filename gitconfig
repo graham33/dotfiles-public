@@ -4,3 +4,5 @@
 	email = graham@grahambennett.org
 [push]
 	default = simple
+[pull]
+	rebase = true
