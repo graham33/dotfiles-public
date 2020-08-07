@@ -29,8 +29,12 @@
     ~/.config/nixpkgs/overlays: config/nixpkgs/overlays
     ~/.config/nixpkgs/packages: config/nixpkgs/packages
     ~/.gitconfig:
-    ~/.gnupg/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg/pubring.gpg: gnupg/pubring.gpg
+    ~/.gnupg/gpg.conf:
+      create: true
+      path: gnupg/gpg.conf
+    ~/.gnupg/pubring.gpg:
+      create: true
+      path: gnupg/pubring.gpg
     ~/.local/share/remmina/1579007582517.remmina:
       create: true
       path: local/share/remmina/1579007582517.remmina
