@@ -63,11 +63,13 @@ in
         atftp
         awscli
         bat
+        bfg-repo-cleaner
         dnsutils
         emacs
         exiftool
         freerdp
         gimp
+        git-crypt
         gnome3.nautilus
         gnumake
         google-chrome
@@ -76,6 +78,7 @@ in
         imagemagick
         jmtpfs
         libreoffice
+        libxml2
         lxterminal
         myMpv
         myScripts
