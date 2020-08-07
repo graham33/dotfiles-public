@@ -70,6 +70,7 @@ in
         freerdp
         gimp
         git-crypt
+        gnupg
         gnome3.nautilus
         gnumake
         google-chrome

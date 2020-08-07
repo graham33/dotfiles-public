@@ -51,3 +51,6 @@
     ~/.tmux.conf:
     ~/.vimrc:
     ~/.zshrc:
+
+- shell:
+  - chmod 700 ~/.gnupg
