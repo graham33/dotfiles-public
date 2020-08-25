@@ -68,12 +68,9 @@ in
         emacs
         exiftool
         freerdp
-        gimp
         git-crypt
         gnupg
-        gnome3.nautilus
         gnumake
-        google-chrome
         gopro
         gpsbabel
         imagemagick
@@ -98,12 +95,19 @@ in
         xorg.xev
         xorg.xmodmap
         xss-lock
-        zoom-us
       ] ++ (with nodePackages; [
         create-react-app
         serverless
       ]) ++ myPython2 ++ myPython3
-        ++ pkgs.stdenv.lib.optionals (!minimalInstall) [myTexlive];
+        ++ pkgs.stdenv.lib.optionals (!minimalInstall) [
+          gimp
+          gnome3.nautilus
+          gnuplot
+          google-chrome
+          myTexlive
+          octaveFull
+          zoom-us
+        ];
     };
   };
 
