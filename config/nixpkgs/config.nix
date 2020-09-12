@@ -106,6 +106,8 @@ in
           google-chrome
           myTexlive
           octaveFull
+          skypeforlinux
+          vlc
           zoom-us
         ];
     };
