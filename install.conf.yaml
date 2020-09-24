@@ -31,6 +31,7 @@
     ~/.config/vlc/vlcrc:
       create: true
       path: config/vlc/vlcrc
+    ~/.config/zoomus.conf: config/zoomus.conf
     ~/.gitconfig:
     ~/.gnupg/gpg.conf:
       create: true
