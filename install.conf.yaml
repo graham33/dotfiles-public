@@ -28,6 +28,9 @@
       path: config/nixpkgs/config.nix
     ~/.config/nixpkgs/overlays: config/nixpkgs/overlays
     ~/.config/nixpkgs/packages: config/nixpkgs/packages
+    ~/.config/vlc/vlcrc:
+      create: true
+      path: config/vlc/vlcrc
     ~/.gitconfig:
     ~/.gnupg/gpg.conf:
       create: true
