@@ -19,15 +19,13 @@ self: super: {
   my-packages = let
     myMpv = super.mpv.override { cddaSupport = true; };
 
-    myPython2 = [(super.python2.withPackages (ps: with ps; [
+    myPython2 = [(self.python2.withPackages (ps: with ps; [
       arrow
       boto
       units
     ]))];
 
-    python-rtmidi = super.callPackage ../packages/python-rtmidi.nix { inherit (super.python3Packages) alabaster buildPythonPackage fetchPypi flake8 tox; isPy27 = false; };
-
-    myPython3 = [(super.python3.withPackages (ps: with ps; [
+    myPython3 = [(self.python3.withPackages (ps: with ps; [
       arrow
       boto3
       click
@@ -110,6 +108,14 @@ self: super: {
     rev = "v2.0.0";
     sha256 = "sha256:1mrvbm78jnk7m44gvpa7l2iwrjiv9584f14vlcw9p334zxknpsfr";
   }) {};
+
+  python3 = super.python3.override {
+    packageOverrides = python-self: python-super: {
+      python-rtmidi = python-super.callPackage ../packages/python-rtmidi.nix {};
+    };
+  };
+
+  python3Packages = self.python3.pkgs;
 
   zoom-us = let
     # Used for icons, appdata, and desktop file.
