@@ -45,62 +45,62 @@ self: super: {
     });
 
   in
-      super.buildEnv {
-        name = "my-packages";
-        paths = with super; [
-          atftp
-          awscli
-          bat
-          bfg-repo-cleaner
-          dnsutils
-          emacs
-          exiftool
-          freerdp
-          git-crypt
-          gnupg
-          gnumake
-          gopro
-          gpsbabel
-          imagemagick
-          jmtpfs
-          libreoffice
-          libxml2
-          lxterminal
-          myMpv
-          self.graham33-scripts
-          nix
-          nixpkgs-review
-          nmap
-          nodejs
-          pavucontrol
-          self.pypi2nix
-          remmina
-          ripgrep
-          terraform
-          tio
-          tmux
-          traceroute
-          unzip
-          whois
-          xorg.xev
-          xorg.xmodmap
-          xss-lock
-        ] ++ (with nodePackages; [
-          create-react-app
-          serverless
-        ]) ++ myPython2 ++ myPython3
-        ++ super.stdenv.lib.optionals (!minimalInstall) [
-          gimp
-          gnome3.nautilus
-          gnuplot
-          google-chrome
-          myTexlive
-          octaveFull
-          skypeforlinux
-          vlc
-          self.zoom-us
-        ];
-      };
+    super.buildEnv {
+      name = "my-packages";
+      paths = with super; [
+        atftp
+        awscli
+        bat
+        bfg-repo-cleaner
+        dnsutils
+        emacs
+        exiftool
+        freerdp
+        git-crypt
+        gnupg
+        gnumake
+        gopro
+        gpsbabel
+        imagemagick
+        jmtpfs
+        libreoffice
+        libxml2
+        lxterminal
+        myMpv
+        self.graham33-scripts
+        nix
+        nixpkgs-review
+        nmap
+        nodejs
+        pavucontrol
+        self.pypi2nix
+        remmina
+        ripgrep
+        terraform
+        tio
+        tmux
+        traceroute
+        unzip
+        whois
+        xorg.xev
+        xorg.xmodmap
+        xss-lock
+      ] ++ (with nodePackages; [
+        create-react-app
+        serverless
+      ]) ++ myPython2 ++ myPython3
+      ++ super.stdenv.lib.optionals (!minimalInstall) [
+        gimp
+        gnome3.nautilus
+        gnuplot
+        google-chrome
+        myTexlive
+        octaveFull
+        skypeforlinux
+        vlc
+        self.zoom-us
+      ];
+    };
 
   pypi2nix = import (super.fetchgit {
     url = "https://github.com/nix-community/pypi2nix";
