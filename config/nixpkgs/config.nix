@@ -56,6 +56,10 @@ in
 
   # blacklistedLicenses = with pkgs.stdenv.lib.licenses; [ agpl3Plus ];
 
+  permittedInsecurePackages = [
+    "xpdf-4.02"
+  ];
+
   packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
       name = "my-packages";
@@ -81,8 +85,10 @@ in
         myMpv
         myScripts
         nix
+        nixpkgs-review
         nmap
         nodejs
+        pavucontrol
         pypi2nix
         remmina
         ripgrep
