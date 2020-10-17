@@ -1,0 +1,2 @@
+# Toggle displays
+bindsym XF86Display exec toggle-displays
