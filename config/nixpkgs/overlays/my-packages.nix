@@ -7,8 +7,8 @@ self: super: {
     name = "graham33-scripts";
     src = super.fetchgit {
       url = "https://github.com/graham33/scripts";
-      rev = "dc4a72cb271ae1b71e2664fa5d1e261b0c63488c";
-      sha256 = "0qzwvbc9mbmnmqfgydp4px6ir76mw7gwvf4amfnphfxw69g0xfv3";
+      rev = "c07c2288ab18c67c7190feedeaf5a18842e96c28";
+      sha256 = "1djs0m13i51i9bibq7gsnr9gd407f5zhd7bm770yvp9vjj68r5n0";
     };
     buildCommand = ''
       mkdir -p $out/bin
