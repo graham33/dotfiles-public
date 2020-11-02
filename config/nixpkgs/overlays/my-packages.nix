@@ -30,7 +30,7 @@ self: super: {
       boto3
       click
       dbus-python
-      fiblary
+      fiblary3
       numpy
       pandas
       pip
@@ -112,6 +112,7 @@ self: super: {
 
   python3 = super.python3.override {
     packageOverrides = python-self: python-super: {
+      fiblary3 = python-super.callPackage ../packages/fiblary3 {};
       python-rtmidi = python-super.callPackage ../packages/python-rtmidi.nix {};
     };
   };
