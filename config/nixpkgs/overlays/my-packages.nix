@@ -30,6 +30,7 @@ self: super: {
       boto3
       click
       dbus-python
+      fiblary
       numpy
       pandas
       pip
