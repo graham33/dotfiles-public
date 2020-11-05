@@ -99,6 +99,7 @@ self: super: {
         octaveFull
         skypeforlinux
         vlc
+        wine
         self.zoom-us
       ];
     };
