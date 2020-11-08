@@ -17,7 +17,7 @@ self: super: {
   };
 
   my-packages = let
-    myMpv = super.mpv.override { cddaSupport = true; };
+    #myMpv = super.mpv.override { cddaSupport = true; };
 
     myPython2 = [(self.python2.withPackages (ps: with ps; [
       arrow
@@ -36,6 +36,7 @@ self: super: {
       pip
       pytest
       python-rtmidi
+      pyyaml
       xlib
       yapf
     ]))];
@@ -67,14 +68,15 @@ self: super: {
         libreoffice
         libxml2
         lxterminal
-        myMpv
+        #myMpv
+        mpv
         self.graham33-scripts
         nix
         nixpkgs-review
         nmap
         nodejs
         pavucontrol
-        self.pypi2nix
+        #self.pypi2nix
         remmina
         ripgrep
         terraform
@@ -82,6 +84,7 @@ self: super: {
         tmux
         traceroute
         unzip
+        wget
         whois
         xorg.xev
         xorg.xmodmap
@@ -104,12 +107,12 @@ self: super: {
       ];
     };
 
-  pypi2nix = import (super.fetchgit {
-    url = "https://github.com/nix-community/pypi2nix";
-    # adjust rev and sha256 to desired version
-    rev = "v2.0.0";
-    sha256 = "sha256:1mrvbm78jnk7m44gvpa7l2iwrjiv9584f14vlcw9p334zxknpsfr";
-  }) {};
+  #pypi2nix = import (super.fetchgit {
+  #  url = "https://github.com/nix-community/pypi2nix";
+  #  # adjust rev and sha256 to desired version
+  #  rev = "v2.0.0";
+  #  sha256 = "sha256:1mrvbm78jnk7m44gvpa7l2iwrjiv9584f14vlcw9p334zxknpsfr";
+  #}) {};
 
   python3 = super.python3.override {
     packageOverrides = python-self: python-super: {
