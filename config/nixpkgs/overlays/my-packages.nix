@@ -37,6 +37,7 @@ self: super: {
       pytest
       python-rtmidi
       pyyaml
+      wheel
       xlib
       yapf
     ]))];
@@ -94,6 +95,8 @@ self: super: {
         serverless
       ]) ++ myPython2 ++ myPython3
       ++ super.stdenv.lib.optionals (!minimalInstall) [
+        audacity
+        audio-recorder
         gimp
         gnome3.nautilus
         gnuplot
