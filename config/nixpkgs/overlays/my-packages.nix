@@ -29,6 +29,7 @@ self: super: {
       arrow
       boto3
       click
+      ciso8601
       dbus-python
       fiblary3
       numpy
@@ -36,6 +37,7 @@ self: super: {
       pip
       pytest
       python-rtmidi
+      python-slugify
       pyyaml
       wheel
       xlib
@@ -85,6 +87,7 @@ self: super: {
         tmux
         traceroute
         unzip
+        websocat
         wget
         whois
         xorg.xev
@@ -93,6 +96,7 @@ self: super: {
       ] ++ (with nodePackages; [
         create-react-app
         serverless
+        "socket.io-client"
       ]) ++ myPython2 ++ myPython3
       ++ super.stdenv.lib.optionals (!minimalInstall) [
         audacity
@@ -117,14 +121,14 @@ self: super: {
   #  sha256 = "sha256:1mrvbm78jnk7m44gvpa7l2iwrjiv9584f14vlcw9p334zxknpsfr";
   #}) {};
 
-  python3 = super.python3.override {
+  python38 = super.python38.override {
     packageOverrides = python-self: python-super: {
       fiblary3 = python-super.callPackage ../packages/fiblary3 {};
       python-rtmidi = python-super.callPackage ../packages/python-rtmidi.nix {};
     };
   };
 
-  python3Packages = self.python3.pkgs;
+  python38Packages = self.python38.pkgs;
 
   zoom-us = super.libsForQt5.callPackage ../packages/zoom-us.nix {};
 }
