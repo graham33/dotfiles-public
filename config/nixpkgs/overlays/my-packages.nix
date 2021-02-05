@@ -123,7 +123,7 @@ self: super: {
 
   python38 = super.python38.override {
     packageOverrides = python-self: python-super: {
-      fiblary3 = python-super.callPackage ../packages/fiblary3 {};
+      inherit (self.nur.repos.graham33) fiblary3;
       python-rtmidi = python-super.callPackage ../packages/python-rtmidi.nix {};
     };
   };
