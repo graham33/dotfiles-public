@@ -68,6 +68,7 @@ self: super: {
         gpsbabel
         imagemagick
         jmtpfs
+        jq
         libreoffice
         libxml2
         lxterminal
