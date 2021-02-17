@@ -1,5 +1,6 @@
 let
   minimalInstall = builtins.getEnv "NIXPKGS_MINIMAL_INSTALL" != "";
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in
 self: super: {
 
@@ -111,7 +112,7 @@ self: super: {
         skypeforlinux
         vlc
         wine
-        self.zoom-us
+        unstable.zoom-us
       ];
     };
 
@@ -129,6 +130,4 @@ self: super: {
   };
 
   python38Packages = self.python38.pkgs;
-
-  zoom-us = super.libsForQt5.callPackage ../packages/zoom-us.nix {};
 }
