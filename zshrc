@@ -60,6 +60,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  nix-shell
 )
 
 source $ZSH/oh-my-zsh.sh

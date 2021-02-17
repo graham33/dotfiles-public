@@ -9,6 +9,8 @@
   - chmod 600 ssh/config
   # oh-my-zsh
   - test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  # zsh-nix-shell
+  - git clone https://github.com/chisui/zsh-nix-shell.git /home/graham/.oh-my-zsh/custom/plugins/nix-shell
   # spacemacs
   - test -d ~/.emacs.d || git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
   # create i3 configs
