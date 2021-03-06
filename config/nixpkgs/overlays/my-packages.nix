@@ -32,7 +32,6 @@ self: super: {
       click
       ciso8601
       dbus-python
-      fiblary3
       numpy
       pandas
       pip
@@ -125,7 +124,6 @@ self: super: {
 
   python38 = super.python38.override {
     packageOverrides = python-self: python-super: {
-      inherit (self.nur.repos.graham33) fiblary3;
     };
   };
 
