@@ -110,6 +110,7 @@ self: super: {
         octaveFull
         skypeforlinux
         vlc
+        vscode
         wine
         unstable.zoom-us
       ];
