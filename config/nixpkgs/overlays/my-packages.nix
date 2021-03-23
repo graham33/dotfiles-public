@@ -61,6 +61,7 @@ self: super: {
         emacs
         exiftool
         freerdp
+        gdb
         git-crypt
         gnupg
         gnumake
