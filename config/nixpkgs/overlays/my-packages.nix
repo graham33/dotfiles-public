@@ -58,7 +58,6 @@ self: super: {
         bat
         bfg-repo-cleaner
         dnsutils
-        emacs
         exiftool
         freerdp
         gdb
