@@ -78,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR=vim
+export EDITOR="emacsclient -t"
 
 if [[ "$TERM" == "xterm" ]]
 then
