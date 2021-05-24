@@ -61,6 +61,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   nix-shell
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
