@@ -109,6 +109,7 @@ self: super: {
         myTexlive
         octaveFull
         skypeforlinux
+        v4l-utils
         vlc
         vscode
         wine
