@@ -64,7 +64,6 @@ self: super: {
         git-crypt
         gnupg
         gnumake
-        gopro
         gpsbabel
         imagemagick
         jmtpfs
@@ -72,8 +71,6 @@ self: super: {
         libreoffice
         libxml2
         lxterminal
-        #myMpv
-        mpv
         self.graham33-scripts
         nix
         nixpkgs-review
@@ -106,6 +103,9 @@ self: super: {
         gnome3.nautilus
         gnuplot
         google-chrome
+        gopro
+        #myMpv
+        mpv
         myTexlive
         octaveFull
         skypeforlinux
