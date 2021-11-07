@@ -65,6 +65,7 @@ self: super: {
         gnupg
         gnumake
         gpsbabel
+        htop
         imagemagick
         jmtpfs
         jq
