@@ -25,6 +25,9 @@
     ~/.config/lxterminal/lxterminal.conf:
       create: true
       path: config/lxterminal/lxterminal.conf
+    ~/.config/nix/nix.conf:
+      create: true
+      path: config/nix/nix.conf
     ~/.config/nixpkgs/config.nix:
       create: true
       path: config/nixpkgs/config.nix
