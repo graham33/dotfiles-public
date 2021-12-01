@@ -20,12 +20,6 @@ self: super: {
   my-packages = let
     #myMpv = super.mpv.override { cddaSupport = true; };
 
-    myPython2 = [(self.python2.withPackages (ps: with ps; [
-      arrow
-      boto
-      units
-    ]))];
-
     myPython3 = [(self.python3.withPackages (ps: with ps; [
       arrow
       boto3
@@ -73,11 +67,11 @@ self: super: {
         libxml2
         lxterminal
         self.graham33-scripts
-        nix
         nixpkgs-review
         nmap
         nodejs
         pavucontrol
+        pstree
         #self.pypi2nix
         remmina
         ripgrep
@@ -96,8 +90,8 @@ self: super: {
         create-react-app
         serverless
         "socket.io-client"
-      ]) ++ myPython2 ++ myPython3
-      ++ super.stdenv.lib.optionals (!minimalInstall) [
+      ]) ++ myPython3
+      ++ super.lib.optionals (!minimalInstall) [
         audacity
         audio-recorder
         gimp
@@ -115,6 +109,7 @@ self: super: {
         vscode
         wine
         unstable.zoom-us
+        xournalpp
       ];
     };
 
