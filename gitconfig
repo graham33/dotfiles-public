@@ -6,3 +6,6 @@
 	default = simple
 [pull]
 	rebase = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/nix/store/ywk8l4984isygmj008qv4iylmlji3xxy-gh-2.2.0/bin/gh auth git-credential

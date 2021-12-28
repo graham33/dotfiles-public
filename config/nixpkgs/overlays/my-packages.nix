@@ -55,6 +55,7 @@ self: super: {
         exiftool
         freerdp
         gdb
+        gh
         git-crypt
         gnupg
         gnumake
