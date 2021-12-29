@@ -51,6 +51,7 @@ self: super: {
         awscli
         bat
         bfg-repo-cleaner
+        cachix
         dnsutils
         exiftool
         freerdp
