@@ -78,6 +78,7 @@ self: super: {
         #self.pypi2nix
         remmina
         ripgrep
+        semver-tool
         terraform
         tio
         tmux
