@@ -52,6 +52,7 @@ self: super: {
         bat
         bfg-repo-cleaner
         cachix
+        direnv
         dnsutils
         exiftool
         freerdp
@@ -69,6 +70,7 @@ self: super: {
         libxml2
         lxterminal
         self.graham33-scripts
+        nix-direnv
         nix-prefetch-git
         nixpkgs-review
         nmap
