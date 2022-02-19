@@ -1,7 +1,7 @@
 ### Laptop-specific config ###
 
 # Toggle displays
-bindsym XF86Display exec toggle-displays
+bindsym XF86Display exec --no-startup-id toggle-display eDP-1
 
 # screensaver after 20 mins
 exec xset s 1200
