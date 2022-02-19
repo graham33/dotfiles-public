@@ -87,6 +87,7 @@ self: super: {
         tmux
         traceroute
         unzip
+        wally-cli
         websocat
         wget
         whois
