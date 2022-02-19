@@ -68,6 +68,7 @@ self: super: {
         jq
         libreoffice
         libxml2
+        losslesscut-bin
         lxterminal
         self.graham33-scripts
         nix-direnv
