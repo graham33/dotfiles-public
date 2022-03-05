@@ -107,6 +107,7 @@ self: super: {
         apktool
         audacity
         audio-recorder
+        evince
         gimp
         gnome3.nautilus
         gnuplot
