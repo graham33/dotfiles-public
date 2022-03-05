@@ -47,6 +47,7 @@ self: super: {
     super.buildEnv {
       name = "my-packages";
       paths = with super; [
+        appimage-run
         atftp
         awscli
         bat
@@ -81,7 +82,9 @@ self: super: {
         #self.pypi2nix
         remmina
         ripgrep
+        scrcpy
         semver-tool
+        socat
         terraform
         tio
         tmux
@@ -100,6 +103,8 @@ self: super: {
         "socket.io-client"
       ]) ++ myPython3
       ++ super.lib.optionals (!minimalInstall) [
+        adobe-reader
+        apktool
         audacity
         audio-recorder
         gimp
@@ -112,6 +117,7 @@ self: super: {
         myTexlive
         octaveFull
         skypeforlinux
+        sxiv
         v4l-utils
         vlc
         vscode

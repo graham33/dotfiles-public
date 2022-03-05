@@ -9,6 +9,7 @@
   };
 
   permittedInsecurePackages = [
+    "adobe-reader-9.5.5"
     "xpdf-4.02"
   ];
 
