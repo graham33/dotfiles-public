@@ -67,6 +67,7 @@ self: super: {
         imagemagick
         jmtpfs
         jq
+        lego
         libreoffice
         libxml2
         losslesscut-bin
