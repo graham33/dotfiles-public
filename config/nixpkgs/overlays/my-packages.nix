@@ -126,6 +126,7 @@ self: super: {
         wine
         unstable.zoom-us
         xournalpp
+        yarn2nix
       ];
     };
 
