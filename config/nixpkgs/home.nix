@@ -19,6 +19,18 @@
     };
   };
 
+    home.file.".emacs.d" = {
+    # don't make the directory read only so that impure melpa can still happen
+    # for now
+    recursive = true;
+    source = pkgs.fetchFromGitHub {
+      owner = "syl20bnr";
+      repo = "spacemacs";
+      rev = "4688cd7dcea36ee346d1aafba7f0638f4d816c28";
+      sha256 = "sha256-M5xr4pRpiKbyg68oADrCHGLdiB3cFnzkmh9WHFTI/Mw=";
+    };
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
