@@ -88,7 +88,7 @@ self: super: {
         socat
         terraform
         tio
-        tmux
+        #tmux
         traceroute
         unzip
         wally-cli

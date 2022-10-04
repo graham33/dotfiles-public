@@ -61,7 +61,6 @@
     ~/.profile:
     ~/.spacemacs:
     ~/.ssh/config: ssh/config
-    ~/.tmux.conf:
     ~/.vimrc:
     ~/.zprofile:
     ~/.zshrc:

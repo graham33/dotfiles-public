@@ -30,14 +30,23 @@
     settings = {
       git_protocol = "https";
       prompt = "enabled";
-    };
-    aliases = {
-      co = "pr checkout";
-      pv = "pr view";
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view";
+      };
     };
   };
   programs.htop.enable = true;
   programs.jq.enable = true;
+  programs.tmux = {
+    enable = true;
+    baseIndex = 1;
+    escapeTime = 0;
+    historyLimit = 100000;
+    keyMode = "vi";
+    prefix = "C-o";
+    terminal = "screen-256color";
+  };
 
   home.file.".emacs.d" = {
     # don't make the directory read only so that impure melpa can still happen
