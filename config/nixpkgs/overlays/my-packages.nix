@@ -50,30 +50,30 @@ self: super: {
         appimage-run
         atftp
         awscli
-        bat
+        #bat
         bfg-repo-cleaner
         cachix
-        direnv
+        #direnv
         dnsutils
         exiftool
         freerdp
-        gdb
-        gh
+        #gdb
+        #gh
         git-crypt
         gnupg
-        gnumake
+        #gnumake
         gpsbabel
-        htop
+        #htop
         imagemagick
         jmtpfs
-        jq
+        #jq
         lego
         libreoffice
         libxml2
         losslesscut-bin
         lxterminal
         self.graham33-scripts
-        nix-direnv
+        #nix-direnv
         nix-prefetch-git
         nixpkgs-review
         nmap
@@ -82,7 +82,7 @@ self: super: {
         pstree
         #self.pypi2nix
         remmina
-        ripgrep
+        #ripgrep
         scrcpy
         semver-tool
         socat
@@ -122,7 +122,7 @@ self: super: {
         sxiv
         v4l-utils
         vlc
-        vscode
+        #vscode
         wine
         unstable.zoom-us
         xournalpp
