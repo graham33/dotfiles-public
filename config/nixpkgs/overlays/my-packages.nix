@@ -20,28 +20,28 @@ self: super: {
   my-packages = let
     #myMpv = super.mpv.override { cddaSupport = true; };
 
-    myPython3 = [(self.python3.withPackages (ps: with ps; [
-      arrow
-      boto3
-      click
-      ciso8601
-      dbus-python
-      numpy
-      pandas
-      pip
-      pytest
-      python-rtmidi
-      python-slugify
-      pyyaml
-      wheel
-      xlib
-      yapf
-    ]))];
+    # myPython3 = [(self.python3.withPackages (ps: with ps; [
+    #   arrow
+    #   boto3
+    #   click
+    #   ciso8601
+    #   dbus-python
+    #   numpy
+    #   pandas
+    #   pip
+    #   pytest
+    #   python-rtmidi
+    #   python-slugify
+    #   pyyaml
+    #   wheel
+    #   xlib
+    #   yapf
+    # ]))];
 
-    myTexlive = (super.texlive.combine {
-      inherit (super.texlive) crossword lastpage newlfm nopageno
-        patchcmd scheme-small titling;
-    });
+    # myTexlive = (super.texlive.combine {
+    #   inherit (super.texlive) crossword lastpage newlfm nopageno
+    #     patchcmd scheme-small titling;
+    # });
 
   in
     super.buildEnv {
@@ -102,7 +102,7 @@ self: super: {
         create-react-app
         serverless
         "socket.io-client"
-      ]) ++ myPython3
+      ]) # ++ myPython3
       ++ super.lib.optionals (!minimalInstall) [
         adobe-reader
         apktool
@@ -116,7 +116,7 @@ self: super: {
         gopro
         #myMpv
         mpv
-        myTexlive
+        # myTexlive
         octaveFull
         skypeforlinux
         sxiv

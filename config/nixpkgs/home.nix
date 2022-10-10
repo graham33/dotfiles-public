@@ -111,9 +111,22 @@
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = let
+    myPython3 = pkgs.python3.withPackages (ps: with ps; [
+      boto3
+      click
+      numpy
+      pandas
+      pip
+      pytest
+      pyyaml
+      wheel
+      yapf
+    ]);
+  in with pkgs; [
     gdb
     gnumake
+    myPython3
     ripgrep
   ];
 
