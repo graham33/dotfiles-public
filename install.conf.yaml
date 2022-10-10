@@ -6,18 +6,14 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - chmod 600 ssh/config
-  # link laptop config by default
-  - test ! -e ~/.config/i3/config && ln -s config.laptop ~/.config/i3/config || true
 
 - link:
     ~/.config/lxterminal/lxterminal.conf:
       create: true
       path: config/lxterminal/lxterminal.conf
-    ~/.config/nixpkgs/config.nix:
+    ~/.config/nixpkgs/home.nix:
       create: true
-      path: config/nixpkgs/config.nix
-    ~/.config/nixpkgs/home.nix: config/nixpkgs/home.nix
+      path: config/nixpkgs/home.nix
     ~/.config/nixpkgs/flake.nix: config/nixpkgs/flake.nix
     ~/.config/nixpkgs/flake.lock: config/nixpkgs/flake.lock
     ~/.config/nixpkgs/overlays: config/nixpkgs/overlays
@@ -28,7 +24,3 @@
     ~/.config/zoomus.conf: config/zoomus.conf
     ~/.octaverc:
     ~/.spacemacs:
-    ~/.vimrc:
-
-- shell:
-  - chmod 700 ~/.gnupg
