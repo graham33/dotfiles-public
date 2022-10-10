@@ -49,18 +49,18 @@ self: super: {
       paths = with super; [
         appimage-run
         atftp
-        awscli
+        #awscli
         #bat
         bfg-repo-cleaner
-        cachix
+        #cachix
         #direnv
         dnsutils
         exiftool
         freerdp
         #gdb
         #gh
-        git-crypt
-        gnupg
+        #git-crypt
+        #gnupg
         #gnumake
         gpsbabel
         #htop

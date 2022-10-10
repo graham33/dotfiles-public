@@ -25,9 +25,6 @@
     ~/.config/lxterminal/lxterminal.conf:
       create: true
       path: config/lxterminal/lxterminal.conf
-    ~/.config/nix/nix.conf:
-      create: true
-      path: config/nix/nix.conf
     ~/.config/nixpkgs/config.nix:
       create: true
       path: config/nixpkgs/config.nix
@@ -40,14 +37,6 @@
       create: true
       path: config/vlc/vlcrc
     ~/.config/zoomus.conf: config/zoomus.conf
-    ~/.direnvrc:
-    ~/.gitconfig:
-    ~/.gnupg/gpg.conf:
-      create: true
-      path: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf:
-      create: true
-      path: gnupg/gpg-agent.conf
     ~/.local/share/remmina/1579007582517.remmina:
       create: true
       path: local/share/remmina/1579007582517.remmina
@@ -63,7 +52,6 @@
     ~/.ssh/config: ssh/config
     ~/.vimrc:
     ~/.zprofile:
-    ~/.zshrc:
 
 - shell:
   - chmod 700 ~/.gnupg

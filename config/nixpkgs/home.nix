@@ -55,6 +55,9 @@
       };
     };
   };
+  programs.gpg = {
+    enable = true;
+  };
   programs.htop.enable = true;
   programs.jq.enable = true;
   programs.tmux = {
@@ -97,6 +100,10 @@
     };
     defaultEditor = true;
   };
+  services.gpg-agent = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   # TODO: .spacemacs
   home.file.".emacs.d" = {
@@ -124,7 +131,10 @@
       yapf
     ]);
   in with pkgs; [
+    awscli
+    cachix
     gdb
+    git-crypt
     gnumake
     myPython3
     ripgrep
