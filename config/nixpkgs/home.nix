@@ -155,10 +155,7 @@
   xsession.windowManager.i3 = {
     enable = true;
     config = {
-      fonts = {
-        names = ["Source Code Pro"];
-        size = 12.0;
-      };
+      defaultWorkspace = "workspace number 1";
       keybindings = let
         modifier = config.xsession.windowManager.i3.config.modifier;
         refresh_i3status = "killall -SIGUSR1 i3status";
