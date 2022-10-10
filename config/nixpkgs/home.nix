@@ -71,6 +71,14 @@
     ];
   };
 
+  services.emacs = {
+    enable = true;
+    client = {
+      enable = true;
+    };
+    defaultEditor = true;
+  };
+
   # TODO: .spacemacs
   home.file.".emacs.d" = {
     # don't make the directory read only so that impure melpa can still happen
