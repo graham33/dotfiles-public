@@ -97,7 +97,7 @@ self: super: {
         whois
         xorg.xev
         xorg.xmodmap
-        xss-lock
+        #xss-lock
       ] ++ (with nodePackages; [
         create-react-app
         serverless

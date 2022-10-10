@@ -7,10 +7,6 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - chmod 600 ssh/config
-  # create i3 configs
-  - mkdir -p ~/.config/i3
-  - cat config/i3/config.common config/i3/config.laptop > ~/.config/i3/config.laptop
-  - cat config/i3/config.common config/i3/config.desktop > ~/.config/i3/config.desktop
   # link laptop config by default
   - test ! -e ~/.config/i3/config && ln -s config.laptop ~/.config/i3/config || true
 

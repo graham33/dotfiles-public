@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -28,7 +28,19 @@
     };
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   programs.bat.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+    };
+  };
   programs.git = {
     enable = true;
     userName = "Graham Bennett";
@@ -36,12 +48,6 @@
     extraConfig = {
       pull = { rebase = "true"; };
       push = { default = "simple"; };
-    };
-  };
-  programs.direnv = {
-    enable = true;
-    nix-direnv = {
-      enable = true;
     };
   };
   programs.gh = {
@@ -59,6 +65,9 @@
     enable = true;
   };
   programs.htop.enable = true;
+  programs.i3status = {
+    enable = true;
+  };
   programs.jq.enable = true;
   programs.tmux = {
     enable = true;
@@ -93,6 +102,9 @@
     ];
   };
 
+  # services.dropbox = {
+  #   enable = true;
+  # };
   services.emacs = {
     enable = true;
     client = {
@@ -139,6 +151,47 @@
     myPython3
     ripgrep
   ];
+
+  xsession.windowManager.i3 = {
+    enable = true;
+    config = {
+      fonts = {
+        names = ["Source Code Pro"];
+        size = 12.0;
+      };
+      keybindings = let
+        modifier = config.xsession.windowManager.i3.config.modifier;
+        refresh_i3status = "killall -SIGUSR1 i3status";
+      in lib.mkOptionDefault {
+        "${modifier}+Shift+j" = "move left";
+        "${modifier}+Shift+k" = "move down";
+        "${modifier}+Shift+l" = "move up";
+        "${modifier}+Shift+semicolon" = "move right";
+        # Use pactl to adjust volume in PulseAudio.
+        XF86AudioRaiseVolume = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && ${refresh_i3status}";
+        XF86AudioLowerVolume = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && ${refresh_i3status}";
+        XF86AudioMute = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && ${refresh_i3status}";
+        XF86AudioMicMute = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && ${refresh_i3status}";
+        # Screen brightness controls
+        XF86MonBrightnessUp = "exec xbright +0.1 # increase screen brightness";
+        XF86MonBrightnessDown = "exec xbright -0.1 # decrease screen brightness";
+        # Toggle displays
+        XF86Display = "exec --no-startup-id toggle-display eDP-1";
+      };
+      modifier = "Mod4";
+      startup = [
+        { command = "${pkgs.xss-lock}/bin/xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
+        { command = "nm-applet"; notification = false; }
+        { command = "dropbox start"; notification = false; }
+        # screensaver after 20 mins
+        { command = "xset s 1200"; }
+        # screen standby after 30 mins, turn off after 1hr
+        { command = "xset dpms 1800 1800 3600
+"; }
+      ];
+      terminal = "lxterminal";
+    };
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

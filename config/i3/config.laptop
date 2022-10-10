@@ -1,9 +1,0 @@
-### Laptop-specific config ###
-
-# Toggle displays
-bindsym XF86Display exec --no-startup-id toggle-display eDP-1
-
-# screensaver after 20 mins
-exec xset s 1200
-# screen standby after 30 mins, turn off after 1hr
-exec xset dpms 1800 1800 3600
