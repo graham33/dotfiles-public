@@ -7,12 +7,6 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - chmod 600 ssh/config
-  # oh-my-zsh
-  - test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-  # zsh-nix-shell
-  - test -d ~/.oh-my-zsh/custom/plugins/nix-shell || git clone https://github.com/chisui/zsh-nix-shell.git /home/graham/.oh-my-zsh/custom/plugins/nix-shell
-  # spacemacs
-  - test -d ~/.emacs.d || git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
   # create i3 configs
   - mkdir -p ~/.config/i3
   - cat config/i3/config.common config/i3/config.laptop > ~/.config/i3/config.laptop
@@ -21,7 +15,6 @@
   - test ! -e ~/.config/i3/config && ln -s config.laptop ~/.config/i3/config || true
 
 - link:
-    ~/.bash_custom:
     ~/.config/lxterminal/lxterminal.conf:
       create: true
       path: config/lxterminal/lxterminal.conf
@@ -44,10 +37,6 @@
       create: true
       path: local/share/remmina/1578960944633.remmina
     ~/.octaverc:
-    ~/.oh-my-zsh/custom/themes/robbyrussell.zsh-theme:
-      path: oh-my-zsh/custom/themes/robbyrussell.zsh-theme
-      create: true
-    ~/.profile:
     ~/.spacemacs:
     ~/.ssh/config: ssh/config
     ~/.vimrc:
