@@ -69,6 +69,11 @@
     enable = true;
   };
   programs.jq.enable = true;
+  programs.ssh = {
+    enable = true;
+    serverAliveInterval = 300;
+    serverAliveCountMax = 2;
+  };
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -77,6 +82,12 @@
     keyMode = "vi";
     prefix = "C-o";
     terminal = "screen-256color";
+  };
+  programs.vim = {
+    enable = true;
+    settings = {
+      background = "dark";
+    };
   };
   programs.zsh = {
     enable = true;
@@ -131,6 +142,18 @@
   };
 
   home.packages = let
+    graham33-scripts = pkgs.stdenv.mkDerivation {
+      name = "graham33-scripts";
+      src = pkgs.fetchgit {
+        url = "https://github.com/graham33/scripts";
+        rev = "8808769ce17fe747d80f73d802dd3ade147a38b8";
+        sha256 = "099nsij8s4cawlid08v8mg5iqyb9ikdg546cdm4d8p1g1d9y8jja";
+      };
+      buildCommand = ''
+      mkdir -p $out/bin
+      cp $src/* $out/bin
+    ''   ;
+    };
     myPython3 = pkgs.python3.withPackages (ps: with ps; [
       boto3
       click
@@ -146,10 +169,35 @@
     awscli
     cachix
     gdb
+    gimp
+    gnome.nautilus
+    gnuplot
+    #google-chrome
     git-crypt
     gnumake
+    graham33-scripts
+    libreoffice
+    lxterminal
+    mpv
     myPython3
+    nix-prefetch-git
+    nixpkgs-review
+    nmap
+    pavucontrol
+    pstree
+    remmina
     ripgrep
+    socat
+    sxiv
+    traceroute
+    unzip
+    vlc
+    wally-cli
+    websocat
+    wget
+    whois
+    yarn2nix
+    #zoom-us
   ];
 
   xsession.windowManager.i3 = {

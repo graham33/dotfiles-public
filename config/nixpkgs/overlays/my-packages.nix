@@ -68,33 +68,33 @@ self: super: {
         jmtpfs
         #jq
         lego
-        libreoffice
+        #libreoffice
         libxml2
         losslesscut-bin
-        lxterminal
-        self.graham33-scripts
+        #lxterminal
+        #self.graham33-scripts
         #nix-direnv
-        nix-prefetch-git
-        nixpkgs-review
-        nmap
+        #nix-prefetch-git
+        #nixpkgs-review
+        #nmap
         nodejs
-        pavucontrol
-        pstree
+        #pavucontrol
+        #pstree
         #self.pypi2nix
-        remmina
+        #remmina
         #ripgrep
         scrcpy
         semver-tool
-        socat
+        #socat
         terraform
         tio
         #tmux
-        traceroute
-        unzip
-        wally-cli
-        websocat
-        wget
-        whois
+        #traceroute
+        #unzip
+        #wally-cli
+        #websocat
+        #wget
+        #whois
         xorg.xev
         xorg.xmodmap
         #xss-lock
@@ -109,24 +109,24 @@ self: super: {
         audacity
         audio-recorder
         evince
-        gimp
-        gnome3.nautilus
-        gnuplot
-        google-chrome
+        #gimp
+        #gnome3.nautilus
+        #gnuplot
+        #google-chrome
         gopro
         #myMpv
-        mpv
+        #mpv
         # myTexlive
         octaveFull
         skypeforlinux
-        sxiv
+        #sxiv
         v4l-utils
-        vlc
+        #vlc
         #vscode
         wine
-        unstable.zoom-us
+        #unstable.zoom-us
         xournalpp
-        yarn2nix
+        #yarn2nix
       ];
     };
 

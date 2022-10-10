@@ -26,17 +26,9 @@
       create: true
       path: config/vlc/vlcrc
     ~/.config/zoomus.conf: config/zoomus.conf
-    ~/.local/share/remmina/1579007582517.remmina:
-      create: true
-      path: local/share/remmina/1579007582517.remmina
-    ~/.local/share/remmina/1578960944633.remmina:
-      create: true
-      path: local/share/remmina/1578960944633.remmina
     ~/.octaverc:
     ~/.spacemacs:
-    ~/.ssh/config: ssh/config
     ~/.vimrc:
-    ~/.zprofile:
 
 - shell:
   - chmod 700 ~/.gnupg
