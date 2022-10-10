@@ -47,7 +47,31 @@
     prefix = "C-o";
     terminal = "screen-256color";
   };
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "direnv"
+        "git"
+        "vi-mode"
+      ];
+      theme = "robbyrussell";
+    };
+    plugins = [
+      {
+        name = "nix-shell";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.5.0";
+          sha256 = "sha256-IT3wpfw8zhiNQsrw59lbSWYh0NQ1CUdUtFzRzHlURH0=";
+        };
+      }
+    ];
+  };
 
+  # TODO: .spacemacs
   home.file.".emacs.d" = {
     # don't make the directory read only so that impure melpa can still happen
     # for now
