@@ -9,6 +9,25 @@
   home.username = "graham";
   home.homeDirectory = "/home/graham";
 
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [
+        "https://cache.nixos.org"
+        "https://cache.nixos.org/"
+        "https://graham33.cachix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "graham33.cachix.org-1:DqH72VpwSrACa3+L9eqh4bixjWx9IQUaxQtRh4gtkX8="
+      ];
+    };
+  };
+
   programs.bat.enable = true;
   programs.git = {
     enable = true;
