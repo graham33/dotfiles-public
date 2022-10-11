@@ -64,6 +64,16 @@
   programs.htop.enable = true;
   programs.i3status = {
     enable = true;
+    modules = {
+      "volume master" = {
+        position = 1;
+        settings = {
+          format = "♪ %volume";
+          format_muted = "♪ muted (%volume)";
+          device = "pulse:1";
+        };
+      };
+    };
   };
   programs.jq.enable = true;
   programs.ssh = {
