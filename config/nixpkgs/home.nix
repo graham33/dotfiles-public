@@ -135,7 +135,6 @@
     enableZshIntegration = true;
   };
 
-  # TODO: .spacemacs
   home.file.".emacs.d" = {
     # don't make the directory read only so that impure melpa can still happen
     # for now
@@ -147,6 +146,7 @@
       sha256 = "sha256-M5xr4pRpiKbyg68oADrCHGLdiB3cFnzkmh9WHFTI/Mw=";
     };
   };
+  home.file.".spacemacs".source = ./spacemacs;
 
   home.packages = let
     graham33-scripts = pkgs.stdenv.mkDerivation {
