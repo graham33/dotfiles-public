@@ -212,6 +212,10 @@
     enable = true;
     config = {
       defaultWorkspace = "workspace number 1";
+      fonts = {
+        names = [ "Source Code Pro" ];
+        size = 11.0;
+      };
       keybindings = let
         modifier = config.xsession.windowManager.i3.config.modifier;
         refresh_i3status = "killall -SIGUSR1 i3status";
