@@ -8,9 +8,6 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - link:
-    ~/.config/lxterminal/lxterminal.conf:
-      create: true
-      path: config/lxterminal/lxterminal.conf
     ~/.config/nixpkgs/home.nix:
       create: true
       path: config/nixpkgs/home.nix
