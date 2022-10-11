@@ -169,7 +169,7 @@
     gimp
     gnome.nautilus
     gnuplot
-    #google-chrome
+    google-chrome
     git-crypt
     gnumake
     graham33-scripts
@@ -194,7 +194,7 @@
     wget
     whois
     yarn2nix
-    #zoom-us
+    zoom-us
   ];
 
   xsession.windowManager.i3 = {
