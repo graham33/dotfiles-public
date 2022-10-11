@@ -120,9 +120,9 @@
     ];
   };
 
-  # services.dropbox = {
-  #   enable = true;
-  # };
+  services.dropbox = {
+    enable = true;
+  };
   services.emacs = {
     enable = true;
     client = {
@@ -135,6 +135,7 @@
     enableZshIntegration = true;
   };
 
+  # spacemacs
   home.file.".emacs.d" = {
     # don't make the directory read only so that impure melpa can still happen
     # for now
@@ -245,6 +246,7 @@
     };
   };
 
+  home.file.".octaverc".source = ./octaverc;
   xdg.configFile."lxterminal/lxterminal.conf".source = ./config/lxterminal/lxterminal.conf;
   xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
   xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;

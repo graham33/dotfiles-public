@@ -13,4 +13,3 @@
       path: config/nixpkgs/home.nix
     ~/.config/nixpkgs/flake.nix: config/nixpkgs/flake.nix
     ~/.config/nixpkgs/flake.lock: config/nixpkgs/flake.lock
-    ~/.octaverc:
