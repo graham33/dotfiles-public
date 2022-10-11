@@ -246,6 +246,8 @@
   };
 
   xdg.configFile."lxterminal/lxterminal.conf".source = ./config/lxterminal/lxterminal.conf;
+  xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
+  xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

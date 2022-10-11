@@ -16,9 +16,5 @@
       path: config/nixpkgs/home.nix
     ~/.config/nixpkgs/flake.nix: config/nixpkgs/flake.nix
     ~/.config/nixpkgs/flake.lock: config/nixpkgs/flake.lock
-    ~/.config/vlc/vlcrc:
-      create: true
-      path: config/vlc/vlcrc
-    ~/.config/zoomus.conf: config/zoomus.conf
     ~/.octaverc:
     ~/.spacemacs:
