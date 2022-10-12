@@ -1,2 +1,5 @@
 # dotfiles
-Dotfiles
+
+To install:
+
+    home-manager switch --flake 'path:.dotfiles#graham'
