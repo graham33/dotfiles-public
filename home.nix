@@ -85,6 +85,9 @@
     enable = true;
     baseIndex = 1;
     escapeTime = 0;
+    extraConfig = ''
+      set -g mouse on
+    '';
     historyLimit = 100000;
     keyMode = "vi";
     prefix = "C-o";
