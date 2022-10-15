@@ -215,6 +215,13 @@
   xsession.windowManager.i3 = {
     enable = true;
     config = {
+      bars = [{
+        statusCommand = "${pkgs.i3status}/bin/i3status";
+        fonts = {
+          names = [ "Source Code Pro" ];
+          size = 11.0;
+        };
+      }];
       defaultWorkspace = "workspace number 1";
       fonts = {
         names = [ "Source Code Pro" ];
