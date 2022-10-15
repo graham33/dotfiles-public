@@ -188,6 +188,7 @@
     git-crypt
     gnumake
     graham33-scripts
+    killall
     libreoffice
     lxterminal
     mpv
