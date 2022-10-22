@@ -192,6 +192,7 @@
     lxterminal
     mpv
     myPython3
+    nix-output-monitor
     nix-prefetch-git
     nixpkgs-review
     nixVersions.nix_2_10
