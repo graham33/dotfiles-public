@@ -178,6 +178,7 @@
   in with pkgs; [
     awscli
     cachix
+    freerdp
     gdb
     gimp
     gnome.nautilus
