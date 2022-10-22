@@ -194,7 +194,7 @@
     myPython3
     nix-prefetch-git
     nixpkgs-review
-    nix
+    nixVersions.nix_2_10
     nmap
     pavucontrol
     pstree
