@@ -171,7 +171,9 @@
       pandas
       pip
       pytest
+      python-lsp-server
       pyyaml
+      rope
       wheel
       yapf
     ]);

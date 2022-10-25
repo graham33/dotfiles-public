@@ -40,10 +40,12 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      git
+     go
      ;; helm
      html
      ivy
      javascript
+     lsp
      lua
      markdown
      multiple-cursors
