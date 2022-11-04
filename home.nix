@@ -216,6 +216,10 @@
     zoom-us
   ];
 
+  home.shellAliases = {
+    e = "emacsclient -t";
+  };
+
   systemd.user.sessionVariables = {
     # So the emacs service has the right terminal colours
     COLORTERM = "truecolor";
