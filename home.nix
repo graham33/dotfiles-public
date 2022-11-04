@@ -216,6 +216,12 @@
     zoom-us
   ];
 
+  systemd.user.sessionVariables = {
+    # So the emacs service has the right terminal colours
+    COLORTERM = "truecolor";
+    TERM = "xterm-256color";
+  };
+
   xsession.windowManager.i3 = {
     enable = true;
     config = {
