@@ -107,7 +107,7 @@
         "git"
         "vi-mode"
       ];
-      theme = "robbyrussell";
+      theme = "agnoster";
     };
     plugins = [
       {
