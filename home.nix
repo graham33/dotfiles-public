@@ -130,7 +130,6 @@
     client = {
       enable = true;
     };
-    defaultEditor = true;
   };
   services.gpg-agent = {
     enable = true;
@@ -216,8 +215,12 @@
     zoom-us
   ];
 
+  home.sessionVariables = {
+    EDITOR = "emacsclient -nw -c";
+  };
+
   home.shellAliases = {
-    e = "emacsclient -t";
+    e = "emacsclient -nw -c";
   };
 
   systemd.user.sessionVariables = {
