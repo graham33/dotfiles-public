@@ -100,6 +100,10 @@
   };
   programs.zsh = {
     enable = true;
+    initExtra = ''
+      # Work around problem with env init clobbering EDITOR
+      export EDITOR="emacsclient -nw -c"
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [
