@@ -46,6 +46,7 @@
     extraConfig = {
       pull = { rebase = "true"; };
       push = { default = "simple"; };
+      safe = { directory = "/nix/store/9ijxm2d0vl4jrv8yl25yw67palhf1mk6-airflow"; };
     };
   };
   programs.gh = {
@@ -192,6 +193,7 @@
     git-crypt
     gnumake
     graham33-scripts
+    imagemagick
     killall
     libreoffice
     lxterminal
@@ -203,6 +205,7 @@
     nixVersions.nix_2_10
     nmap
     pavucontrol
+    poppler_utils
     pstree
     remmina
     ripgrep
