@@ -282,8 +282,7 @@
         # screensaver after 20 mins
         { command = "xset s 1200"; }
         # screen standby after 30 mins, turn off after 1hr
-        { command = "xset dpms 1800 1800 3600
-"; }
+        { command = "xset dpms 1800 1800 3600"; }
       ];
       terminal = "lxterminal";
     };
