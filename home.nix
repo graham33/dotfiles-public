@@ -255,10 +255,13 @@
         modifier = config.xsession.windowManager.i3.config.modifier;
         refresh_i3status = "killall -SIGUSR1 i3status";
       in lib.mkOptionDefault {
+        # movement
         "${modifier}+Shift+j" = "move left";
         "${modifier}+Shift+k" = "move down";
         "${modifier}+Shift+l" = "move up";
         "${modifier}+Shift+semicolon" = "move right";
+        # lock screen
+        "${modifier}+Shift+s" = "exec --no-startup-id i3lock";
         # Use pactl to adjust volume in PulseAudio.
         XF86AudioRaiseVolume = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && ${refresh_i3status}";
         XF86AudioLowerVolume = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && ${refresh_i3status}";
