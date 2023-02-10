@@ -238,6 +238,7 @@
 
   xsession.windowManager.i3 = let
     modifier = config.xsession.windowManager.i3.config.modifier;
+    terminal = config.xsession.windowManager.i3.config.terminal;
   in {
     enable = true;
     config = {
@@ -283,6 +284,8 @@
         { command = "xset s 1200"; }
         # screen standby after 30 mins, turn off after 1hr
         { command = "xset dpms 1800 1800 3600"; }
+        # Start terminal with tmux
+        { command = "${terminal} -e tmux"; }
       ];
       terminal = "lxterminal";
     };
