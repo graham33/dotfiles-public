@@ -236,7 +236,9 @@
     TERM = "xterm-256color";
   };
 
-  xsession.windowManager.i3 = {
+  xsession.windowManager.i3 = let
+    modifier = config.xsession.windowManager.i3.config.modifier;
+  in {
     enable = true;
     config = {
       bars = [{
@@ -252,7 +254,6 @@
         size = 11.0;
       };
       keybindings = let
-        modifier = config.xsession.windowManager.i3.config.modifier;
         refresh_i3status = "killall -SIGUSR1 i3status";
       in lib.mkOptionDefault {
         # movement
@@ -286,6 +287,25 @@
       ];
       terminal = "lxterminal";
     };
+    extraConfig = ''
+      set $Locker i3lock && sleep 1
+
+      set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+      mode "$mode_system" {
+          bindsym l exec --no-startup-id $Locker, mode "default"
+          bindsym e exec --no-startup-id i3-msg exit, mode "default"
+          bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+          bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+          bindsym r exec --no-startup-id systemctl reboot, mode "default"
+          bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+          # back to normal: Enter or Escape
+          bindsym Return mode "default"
+          bindsym Escape mode "default"
+      }
+
+      bindsym ${modifier}+Shift+Home mode "$mode_system"
+    '';
   };
 
   home.file.".octaverc".source = ./octaverc;
