@@ -262,6 +262,10 @@
   in {
     enable = true;
     config = {
+      assigns = {
+        "1: tmux" = [{ class = "kitty"; title = "tmux"; }];
+        "2: web" = [{class = "Google-chrome"; }];
+      };
       bars = [{
         statusCommand = "${pkgs.i3status}/bin/i3status";
         fonts = {
@@ -269,7 +273,7 @@
           size = 11.0;
         };
       }];
-      defaultWorkspace = "workspace number 1";
+      defaultWorkspace = "1";
       fonts = {
         names = [ "Source Code Pro" ];
         size = 11.0;
@@ -305,7 +309,9 @@
         # screen standby after 30 mins, turn off after 1hr
         { command = "xset dpms 1800 1800 3600"; }
         # Start terminal with tmux
-        { command = "${terminal} tmux"; }
+        { command = "${terminal} --title tmux tmux"; }
+        # Start google-chrome
+        { command = "google-chrome-stable"; }
       ];
       terminal = "kitty";
     };
