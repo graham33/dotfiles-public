@@ -80,6 +80,14 @@
     };
   };
   programs.jq.enable = true;
+  programs.kitty = {
+    enable = true;
+    font = {
+      name = "Source Code Pro";
+      size = 14;
+    };
+    theme = "Solarized Dark";
+  };
   programs.ssh = {
     enable = true;
     serverAliveInterval = 300;
@@ -297,9 +305,9 @@
         # screen standby after 30 mins, turn off after 1hr
         { command = "xset dpms 1800 1800 3600"; }
         # Start terminal with tmux
-        { command = "${terminal} -e tmux"; }
+        { command = "${terminal} tmux"; }
       ];
-      terminal = "lxterminal";
+      terminal = "kitty";
     };
     extraConfig = ''
       set $Locker i3lock && sleep 1
