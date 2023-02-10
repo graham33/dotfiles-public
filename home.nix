@@ -39,6 +39,10 @@
     };
   };
   programs.emacs.enable = true;
+  programs.fzf = {
+    enable = true;
+    tmux.enableShellIntegration = true;
+  };
   programs.git = {
     enable = true;
     userName = "Graham Bennett";
@@ -83,13 +87,21 @@
   };
   programs.tmux = {
     enable = true;
-    baseIndex = 1;
     escapeTime = 0;
     extraConfig = ''
       set -g mouse on
     '';
     historyLimit = 100000;
     keyMode = "vi";
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
+    ];
     prefix = "C-o";
     terminal = "screen-256color";
   };
