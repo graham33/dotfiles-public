@@ -19,6 +19,14 @@
           config = {
             allowUnfree = true;
           };
+          overlays = [
+            (self: super: {
+              freerdp = super.freerdp.override {
+                openssl = self.openssl_1_1;
+              };
+            })
+          ];
+
           inherit system;
         };
 
