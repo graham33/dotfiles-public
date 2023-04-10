@@ -273,7 +273,6 @@
           size = 11.0;
         };
       }];
-      defaultWorkspace = "1";
       fonts = {
         names = [ "Source Code Pro" ];
         size = 11.0;
@@ -333,6 +332,9 @@
       }
 
       bindsym ${modifier}+Shift+Home mode "$mode_system"
+
+      # switch to workspace 1
+      exec --no-startup-id i3-msg workspace "1: tmux"
     '';
   };
 
