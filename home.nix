@@ -96,7 +96,7 @@
   programs.texlive = {
     enable = true;
     extraPackages = tpkgs: {
-      inherit (tpkgs) crossword lastpage newlfm patchcmd scheme-small titling;
+      inherit (tpkgs) catchfile crossword lastpage newlfm patchcmd scheme-small svg titling transparent trimspaces;
     };
   };
   programs.tmux = {
@@ -220,6 +220,7 @@
     gnumake
     graham33-scripts
     imagemagick
+    inkscape
     killall
     libreoffice
     lxterminal
