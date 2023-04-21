@@ -239,6 +239,7 @@
     pstree
     remmina
     ripgrep
+    rubber
     socat
     sxiv
     traceroute
