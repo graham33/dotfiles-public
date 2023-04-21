@@ -82,6 +82,9 @@
   programs.jq.enable = true;
   programs.kitty = {
     enable = true;
+    extraConfig = ''
+      enable_audio_bell no
+    '';
     font = {
       name = "Source Code Pro";
       size = 14;
