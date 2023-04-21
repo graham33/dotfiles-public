@@ -93,6 +93,12 @@
     serverAliveInterval = 300;
     serverAliveCountMax = 2;
   };
+  programs.texlive = {
+    enable = true;
+    extraPackages = tpkgs: {
+      inherit (tpkgs) crossword lastpage newlfm patchcmd scheme-small titling;
+    };
+  };
   programs.tmux = {
     enable = true;
     escapeTime = 0;
