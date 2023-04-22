@@ -242,6 +242,7 @@
     rubber
     socat
     sxiv
+    texlab
     traceroute
     unzip
     vlc
