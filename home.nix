@@ -182,8 +182,8 @@
     source = pkgs.fetchFromGitHub {
       owner = "syl20bnr";
       repo = "spacemacs";
-      rev = "4688cd7dcea36ee346d1aafba7f0638f4d816c28";
-      sha256 = "sha256-M5xr4pRpiKbyg68oADrCHGLdiB3cFnzkmh9WHFTI/Mw=";
+      rev = "e4b20f797d9e7a03d9a5603942c4a51ea19047b2";
+      sha256 = "sha256-OdZuOmxDYvvsCnu9TcogCeB0agCq8o20/YPCmUSwYPw=";
     };
   };
   home.file.".spacemacs".source = ./spacemacs;
