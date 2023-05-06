@@ -38,7 +38,10 @@
       enable = true;
     };
   };
-  programs.emacs.enable = true;
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsGit;
+  };
   programs.fzf = {
     enable = true;
     tmux.enableShellIntegration = true;
@@ -161,6 +164,7 @@
   };
   services.emacs = {
     enable = true;
+    package = pkgs.emacsGit;
     client = {
       enable = true;
     };
