@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
     in {
@@ -20,6 +24,7 @@
             allowUnfree = true;
           };
           overlays = [
+            emacs-overlay.overlay
             (self: super: {
               freerdp = super.freerdp.override {
                 openssl = self.openssl_1_1;
