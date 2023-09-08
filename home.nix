@@ -40,7 +40,7 @@
   };
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsGit;
+    package = pkgs.emacs-git;
   };
   programs.fzf = {
     enable = true;
@@ -59,7 +59,6 @@
         autoSetupRemote = true;
       };
       safe = {
-        directory = "/nix/store/9ijxm2d0vl4jrv8yl25yw67palhf1mk6-airflow";
       };
     };
   };
@@ -159,8 +158,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "chisui";
           repo = "zsh-nix-shell";
-          rev = "v0.5.0";
-          sha256 = "sha256-IT3wpfw8zhiNQsrw59lbSWYh0NQ1CUdUtFzRzHlURH0=";
+          rev = "v0.7.0";
+          sha256 = "sha256-oQpYKBt0gmOSBgay2HgbXiDoZo5FoUKwyHSlUrOAP5E=";
         };
       }
     ];
@@ -171,7 +170,7 @@
   };
   services.emacs = {
     enable = true;
-    package = pkgs.emacsGit;
+    package = pkgs.emacs-git;
     client = {
       enable = true;
     };
@@ -189,8 +188,8 @@
     source = pkgs.fetchFromGitHub {
       owner = "syl20bnr";
       repo = "spacemacs";
-      rev = "e4b20f797d9e7a03d9a5603942c4a51ea19047b2";
-      sha256 = "sha256-OdZuOmxDYvvsCnu9TcogCeB0agCq8o20/YPCmUSwYPw=";
+      rev = "b86a074437503677d21e2172bd175b37edbdb029";
+      sha256 = "sha256-FmUqdc9t5Niri0LuK4/ZONFj6aKJMjp8XPqHVWPe8jw=";
     };
   };
   home.file.".spacemacs".source = ./spacemacs;

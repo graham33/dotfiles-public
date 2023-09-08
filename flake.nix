@@ -22,6 +22,9 @@
         pkgs = import nixpkgs {
           config = {
             allowUnfree = true;
+            permittedInsecurePackages = [
+              "openssl-1.1.1v"
+            ];
           };
           overlays = [
             emacs-overlay.overlay
