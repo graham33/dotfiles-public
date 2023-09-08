@@ -51,9 +51,16 @@
     userName = "Graham Bennett";
     userEmail = "graham@grahambennett.org";
     extraConfig = {
-      pull = { rebase = "true"; };
-      push = { default = "simple"; };
-      safe = { directory = "/nix/store/9ijxm2d0vl4jrv8yl25yw67palhf1mk6-airflow"; };
+      pull = {
+        rebase = true;
+      };
+      push = {
+        default = "simple";
+        autoSetupRemote = true;
+      };
+      safe = {
+        directory = "/nix/store/9ijxm2d0vl4jrv8yl25yw67palhf1mk6-airflow";
+      };
     };
   };
   programs.gh = {
