@@ -278,6 +278,10 @@
     TERM = "xterm-256color";
   };
 
+  # Let home-manager automatically start systemd user services.
+  # Will eventually become the new default.
+  systemd.user.startServices = "sd-switch";
+
   xsession.windowManager.i3 = let
     modifier = config.xsession.windowManager.i3.config.modifier;
     terminal = config.xsession.windowManager.i3.config.terminal;
