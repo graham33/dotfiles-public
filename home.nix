@@ -174,6 +174,7 @@
     client = {
       enable = true;
     };
+    socketActivation.enable = true;
   };
   services.gpg-agent = {
     enable = true;
