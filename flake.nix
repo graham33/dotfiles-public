@@ -55,7 +55,7 @@
 
             # (3) Enable service.
             services.nix-snapshotter.rootless = {
-              enable = true;
+              enable = false;
               setContainerdSnapshotter = true;
             };
 
