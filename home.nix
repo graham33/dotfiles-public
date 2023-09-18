@@ -343,6 +343,10 @@
         "1: tmux" = [{ class = "kitty"; title = "tmux"; }];
         "2: web" = [{class = "Google-chrome"; }];
       };
+      workspaceOutputAssign = [
+        { workspace = "1: tmux"; output = "primary"; }
+        { workspace = "2: web"; output = "nonprimary"; }
+      ];
       bars = [{
         statusCommand = "${pkgs.i3status}/bin/i3status";
         fonts = {
