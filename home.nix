@@ -274,6 +274,7 @@
   in with pkgs; [
     awscli
     cachix
+    ffmpeg-full
     freerdp
     gdb
     gimp
