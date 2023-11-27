@@ -34,7 +34,7 @@
             emacs-overlay.overlay
             (self: super: {
               freerdp = super.freerdp.override {
-                openssl = self.openssl_1_1;
+                #openssl = self.openssl_1_1;
               };
             })
           ];
