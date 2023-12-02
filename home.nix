@@ -294,7 +294,7 @@
     nix-output-monitor
     nix-prefetch-git
     nixpkgs-review
-    nixVersions.nix_2_10
+    nix
     nmap
     pavucontrol
     poppler_utils
