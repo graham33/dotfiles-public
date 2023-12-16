@@ -312,6 +312,7 @@
     websocat
     wget
     whois
+    x2goclient
     yarn2nix
     zoom-us
   ];
