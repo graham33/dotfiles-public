@@ -12,13 +12,9 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-snapshotter = {
-      url = "github:pdtpartners/nix-snapshotter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, emacs-overlay, nix-snapshotter, ... }:
+  outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
     in {
@@ -45,23 +41,6 @@
         # the path to your home.nix.
         modules = [
           ./home.nix
-          # nix-snapshotter
-          ({ pkgs, ... }: {
-            # (1) Import home-manager module.
-            imports = [ nix-snapshotter.homeModules.nix-snapshotter-rootless ];
-
-            # (2) Add overlay.
-            nixpkgs.overlays = [ nix-snapshotter.overlays.default ];
-
-            # (3) Enable service.
-            services.nix-snapshotter.rootless = {
-              enable = false;
-              setContainerdSnapshotter = true;
-            };
-
-            # (4) Add a containerd CLI like nerdctl.
-            home.packages = [ pkgs.nerdctl ];
-          })
         ];
 
 
