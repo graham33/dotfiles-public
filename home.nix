@@ -335,6 +335,16 @@
   # Will eventually become the new default.
   systemd.user.startServices = "sd-switch";
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+    };
+    systemd.enable = false;
+    xwayland.enable = true;
+
+    extraConfig = builtins.readFile ./hyprland.conf;
+  };
+
   xsession.windowManager.i3 = let
     modifier = config.xsession.windowManager.i3.config.modifier;
     terminal = config.xsession.windowManager.i3.config.terminal;
