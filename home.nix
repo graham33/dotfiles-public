@@ -225,6 +225,7 @@
       enable = true;
     };
     socketActivation.enable = true;
+    startWithUserSession = "graphical";
   };
   services.gpg-agent = {
     enable = true;
@@ -275,6 +276,7 @@
     awscli
     cachix
     ffmpeg-full
+    font-awesome
     freerdp
     gdb
     gimp
@@ -335,15 +337,28 @@
   # Will eventually become the new default.
   systemd.user.startServices = "sd-switch";
 
+  # Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
     };
-    systemd.enable = false;
     xwayland.enable = true;
 
     extraConfig = builtins.readFile ./hyprland.conf;
   };
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "bottom";
+        height = 30;
+        modules-right = [ "temperature" "battery" "clock" ];
+      };
+    };
+  };
+  programs.wofi.enable = true;
 
   xsession.windowManager.i3 = let
     modifier = config.xsession.windowManager.i3.config.modifier;
