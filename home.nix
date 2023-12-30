@@ -354,6 +354,8 @@
         layer = "top";
         position = "bottom";
         height = 30;
+        modules-left = [ "hyprland/workspaces" ];
+        modules-middle = [ "hyprland/window" ];
         modules-right = [ "temperature" "battery" "clock" ];
       };
     };
