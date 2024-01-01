@@ -353,9 +353,74 @@
       mainBar = {
         layer = "top";
         position = "bottom";
-        modules-left = [ "hyprland/workspaces" ];
-        modules-middle = [ "hyprland/window" ];
-        modules-right = [ "network" "memory" "disk" "temperature" "battery" "clock" ];
+        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+        modules-middle = [ ];
+        modules-right = [ "pulseaudio" "network" "cpu" "memory" "disk" "temperature" "battery" "clock" "tray" ];
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-charging = "{capacity}% ";
+          format-plugged = "{capacity}% ";
+          format-alt = "{time} {icon}";
+          format-icons = ["" "" "" "" ""];
+        };
+        clock = {
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
+        };
+        cpu = {
+          format = "{usage}% ";
+          tooltip = false;
+        };
+        disk = {
+          format = "{percentage_free}% ";
+        };
+        "hyprland/window" = {
+          max-length = 200;
+          separate-outputs = true;
+        };
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-scroll-up = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
+        memory = {
+          format = "{}% ";
+        };
+        network = {
+          format-wifi = "{essid} ({signalStrength}%) ";
+            format-ethernet = "{ipaddr}/{cidr} ";
+            tooltip-format = "{ifname} via {gwaddr} ";
+            format-linked = "{ifname} (No IP) ";
+            format-disconnected = "Disconnected ⚠";
+            format-alt = "{ifname}: {ipaddr}/{cidr}";
+        };
+        pulseaudio = {
+          format = "{volume}% {icon} {format_source}";
+            format-bluetooth = "{volume}% {icon} {format_source}";
+            format-bluetooth-muted = " {icon} {format_source}";
+            format-muted = " {format_source}";
+            format-source = "{volume}% ";
+            format-source-muted = "";
+            format-icons = {
+              headphone = "";
+              hands-free = "";
+              headset = "";
+              phone = "";
+              portable = "";
+              car = "";
+              default = ["" "" ""];
+            };
+            on-click = "pavucontrol";
+        };
+        temperature = {
+          critical-threshold = 80;
+          format = "{temperatureC}°C {icon}";
+          format-icons = ["" "" ""];
+        };
       };
     };
     systemd = {
@@ -367,6 +432,7 @@
   services.gammastep = {
     enable = true;
     provider = "geoclue2";
+    tray = true;
   };
   services.mako.enable = true;
 
