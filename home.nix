@@ -342,25 +342,33 @@
     enable = true;
     settings = {
     };
+    systemd.enable = true;
     xwayland.enable = true;
 
     extraConfig = builtins.readFile ./hyprland.conf;
   };
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
     settings = {
       mainBar = {
         layer = "top";
         position = "bottom";
-        height = 30;
         modules-left = [ "hyprland/workspaces" ];
         modules-middle = [ "hyprland/window" ];
-        modules-right = [ "temperature" "battery" "clock" ];
+        modules-right = [ "network" "memory" "disk" "temperature" "battery" "clock" ];
       };
+    };
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
     };
   };
   programs.wofi.enable = true;
+  services.gammastep = {
+    enable = true;
+    provider = "geoclue2";
+  };
+  services.mako.enable = true;
 
   xsession.windowManager.i3 = let
     modifier = config.xsession.windowManager.i3.config.modifier;
