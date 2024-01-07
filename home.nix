@@ -311,6 +311,7 @@
     unzip
     vlc
     wally-cli
+    waypipe
     websocat
     wget
     whois
