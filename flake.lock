@@ -76,6 +76,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-dropbox-patch": {
+      "locked": {
+        "lastModified": 1704641483,
+        "narHash": "sha256-6uO7Cww1Tod31YOF7w0ppzQyWPaHgUrihG1q3i7nN8s=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5c6a0e2bcb75d5f790a51b396ae1182728a8141f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "refs/pull/277422/merge",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1704145853,
@@ -96,7 +112,8 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-dropbox-patch": "nixpkgs-dropbox-patch"
       }
     },
     "systems": {
