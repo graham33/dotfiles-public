@@ -95,6 +95,7 @@
   programs.fzf = {
     enable = true;
     tmux.enableShellIntegration = true;
+    tmux.shellIntegrationOptions = ["-p80%,60%"];
   };
   programs.git = {
     enable = true;
