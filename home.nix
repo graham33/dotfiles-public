@@ -192,6 +192,7 @@
     initExtra = ''
       # Work around problem with env init clobbering EDITOR
       export EDITOR="emacsclient -nw -c"
+      export PATH="$PATH:$HOME/.config/emacs/bin"
     '';
     oh-my-zsh = {
       enable = true;
@@ -232,20 +233,6 @@
     enableZshIntegration = true;
   };
 
-  # spacemacs
-  home.file.".emacs.d" = {
-    # don't make the directory read only so that impure melpa can still happen
-    # for now
-    recursive = true;
-    source = pkgs.fetchFromGitHub {
-      owner = "syl20bnr";
-      repo = "spacemacs";
-      rev = "4a227fc94651136a8de54bcafa7d22abe1fa0295";
-      sha256 = "sha256-+pvgf+oWJQZbcvoTbQQKnQy/1X4mxtSxFdUjpfqv1f0=";
-    };
-  };
-  home.file.".spacemacs".source = ./spacemacs;
-
   home.packages = let
     graham33-scripts = pkgs.stdenv.mkDerivation {
       name = "graham33-scripts";
@@ -275,6 +262,9 @@
   in with pkgs; [
     awscli
     cachix
+    clang
+    coreutils
+    fd
     ffmpeg-full
     font-awesome
     freerdp
@@ -524,6 +514,9 @@
   };
 
   home.file.".octaverc".source = ./octaverc;
+  xdg.configFile."doom/config.el".source = ./config/doom/config.el;
+  xdg.configFile."doom/init.el".source = ./config/doom/init.el;
+  xdg.configFile."doom/packages.el".source = ./config/doom/packages.el;
   xdg.configFile."lxterminal/lxterminal.conf".source = ./config/lxterminal/lxterminal.conf;
   xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
   xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
