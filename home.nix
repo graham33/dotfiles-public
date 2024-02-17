@@ -240,8 +240,8 @@
     source = pkgs.fetchFromGitHub {
       owner = "syl20bnr";
       repo = "spacemacs";
-      rev = "b86a074437503677d21e2172bd175b37edbdb029";
-      sha256 = "sha256-FmUqdc9t5Niri0LuK4/ZONFj6aKJMjp8XPqHVWPe8jw=";
+      rev = "4a227fc94651136a8de54bcafa7d22abe1fa0295";
+      sha256 = "sha256-+pvgf+oWJQZbcvoTbQQKnQy/1X4mxtSxFdUjpfqv1f0=";
     };
   };
   home.file.".spacemacs".source = ./spacemacs;
