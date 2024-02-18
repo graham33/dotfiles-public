@@ -158,20 +158,28 @@
     escapeTime = 0;
     extraConfig = ''
       set -g mouse on
+
+      set -ag terminal-overrides ",xterm-kitty:Tc"
     '';
     historyLimit = 100000;
     keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [
-      resurrect
       {
         plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
         '';
       }
+      resurrect
+      {
+        plugin = tmux-colors-solarized;
+        extraConfig = ''
+          set -g @colors-solarized 'dark'
+        '';
+      }
     ];
     prefix = "C-o";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
   };
   programs.vim = {
     enable = true;
