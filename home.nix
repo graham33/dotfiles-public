@@ -31,6 +31,8 @@
   nixpkgs.config = import ./nixpkgs-config.nix;
   xdg.configFile."nixpkgs/config.nix".source = ./nixpkgs-config.nix;
 
+  fonts.fontconfig.enable = true;
+
   programs.autorandr = {
     enable = true;
     profiles.mobile = {
@@ -135,7 +137,7 @@
       enable_audio_bell no
     '';
     font = {
-      name = "Source Code Pro";
+      name = "FiraCode Nerd Font Mono Reg";
       size = 14;
     };
     theme = "Solarized Dark";
@@ -257,6 +259,8 @@
     fd
     ffmpeg-full
     font-awesome
+    fira-code
+    fira-code-nerdfont
     freerdp
     gdb
     gimp
