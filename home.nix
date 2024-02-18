@@ -427,6 +427,11 @@
   xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
   xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
 
+  home.activation = {
+    syncDoomEmacs = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      doom sync
+    '';
+  };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
