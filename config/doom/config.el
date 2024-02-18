@@ -74,3 +74,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;;
+;; Fix Y to yank whole line
+(after! evil
+  (evil-put-command-property 'evil-yank-line :motion 'evil-line))
