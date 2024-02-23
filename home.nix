@@ -165,13 +165,6 @@
     keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [
       {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-        '';
-      }
-      resurrect
-      {
         plugin = tmux-colors-solarized;
         extraConfig = ''
           set -g @colors-solarized 'dark'
