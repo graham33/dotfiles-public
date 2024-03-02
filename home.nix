@@ -160,6 +160,7 @@
       set -g mouse on
 
       set -ag terminal-overrides ",xterm-kitty:Tc"
+      set-option -ag update-environment "WAYLAND_DISPLAY"
     '';
     historyLimit = 100000;
     keyMode = "vi";
