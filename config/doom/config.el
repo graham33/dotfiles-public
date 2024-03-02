@@ -78,3 +78,8 @@
 ;; Fix Y to yank whole line
 (after! evil
   (evil-put-command-property 'evil-yank-line :motion 'evil-line))
+
+(after! eglot
+  :config
+  (set-eglot-client! 'python-ts-mode '("pyright-langserver" "--stdio"))
+  )
