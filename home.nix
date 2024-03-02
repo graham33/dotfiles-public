@@ -161,6 +161,9 @@
 
       set -ag terminal-overrides ",xterm-kitty:Tc"
       set-option -ag update-environment "WAYLAND_DISPLAY"
+
+      # Update WAYLAND_DISPLAY on attach
+      set-hook -g client-attached 'run-shell update_wayland_display.sh'
     '';
     historyLimit = 100000;
     keyMode = "vi";
@@ -232,8 +235,8 @@
       name = "graham33-scripts";
       src = pkgs.fetchgit {
         url = "https://github.com/graham33/scripts";
-        rev = "8808769ce17fe747d80f73d802dd3ade147a38b8";
-        sha256 = "099nsij8s4cawlid08v8mg5iqyb9ikdg546cdm4d8p1g1d9y8jja";
+        rev = "6dfe86fe4e82ba759ddf5b3cad7f0375b6d6da09";
+        sha256 = "sha256-4iiNxaFznnBO5G56dkHP00e/4JxO8cIu1KHnliZYPjw=";
       };
       buildCommand = ''
       mkdir -p $out/bin
