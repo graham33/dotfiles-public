@@ -84,3 +84,11 @@
   (set-eglot-client! 'python-mode '("pyright-langserver" "--stdio"))
   (set-eglot-client! 'python-ts-mode '("pyright-langserver" "--stdio"))
   )
+
+(after! ellama
+  (setopt ellama-provider
+          (make-llm-ollama
+           :chat-model "mistral" :embedding-model "mistral")
+          )
+  (setopt ellama-keymap-prefix "C-c e")
+  )

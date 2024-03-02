@@ -286,6 +286,7 @@
     nixpkgs-review
     nix
     nmap
+    ollama
     pavucontrol
     poppler_utils
     pstree
