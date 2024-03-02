@@ -81,5 +81,6 @@
 
 (after! eglot
   :config
+  (set-eglot-client! 'python-mode '("pyright-langserver" "--stdio"))
   (set-eglot-client! 'python-ts-mode '("pyright-langserver" "--stdio"))
   )
