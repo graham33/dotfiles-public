@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, cudaSupport, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -286,7 +286,9 @@
     nixpkgs-review
     nix
     nmap
-    (ollama.override { acceleration = "cuda"; })
+    (ollama.override (lib.optionalAttrs cudaSupport {
+      acceleration = "cuda";
+    }))
     pavucontrol
     poppler_utils
     pstree

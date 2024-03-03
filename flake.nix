@@ -20,43 +20,51 @@
   outputs = { nixpkgs, home-manager, emacs-overlay, nixpkgs-dropbox-patch, ... }:
     let
       system = "x86_64-linux";
-    in {
-      homeConfigurations.graham = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          config = {
-            allowUnfree = true;
-            permittedInsecurePackages = [
-              "openssl-1.1.1v"
-            ];
-          };
-          overlays = let
-            pkgs-dropbox-patch = import nixpkgs-dropbox-patch {
-              config = {
-                allowUnfree = true;
-              };
-              inherit system;
-            };
-          in [
-            emacs-overlay.overlay
-            (self: super: {
-              freerdp = super.freerdp.override {
-                #openssl = self.openssl_1_1;
-              };
-              inherit (pkgs-dropbox-patch) dropbox;
-            })
+      pkgs = import nixpkgs {
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "openssl-1.1.1v"
           ];
-          inherit system;
         };
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [
-          ./home.nix
+        overlays = let
+          pkgs-dropbox-patch = import nixpkgs-dropbox-patch {
+            config = {
+              allowUnfree = true;
+            };
+            inherit system;
+          };
+        in [
+          emacs-overlay.overlay
+          (self: super: {
+            freerdp = super.freerdp.override {
+              #openssl = self.openssl_1_1;
+            };
+            inherit (pkgs-dropbox-patch) dropbox;
+          })
         ];
-
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        inherit system;
+      };
+    in {
+      homeConfigurations = {
+        graham = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home.nix
+          ];
+          extraSpecialArgs = {
+            cudaSupport = true;
+          };
+        };
+        graham-no-cuda = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home.nix
+          ];
+          extraSpecialArgs = {
+            cudaSupport = false;
+          };
+        };
       };
     };
 }
