@@ -286,7 +286,7 @@
     nixpkgs-review
     nix
     nmap
-    ollama
+    (ollama.override { acceleration = "cuda"; })
     pavucontrol
     poppler_utils
     pstree
