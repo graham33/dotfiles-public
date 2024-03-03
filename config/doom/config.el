@@ -88,7 +88,11 @@
 (after! ellama
   (setopt ellama-provider
           (make-llm-ollama
-           :chat-model "mistral" :embedding-model "mistral")
+           :host (if (string= (system-name) "thinkpadx1yoga")
+                     "skynet"
+                   "localhost")
+           :chat-model "mistral"
+           :embedding-model "mistral")
           )
   (setopt ellama-keymap-prefix "C-c e")
   )
