@@ -83,6 +83,14 @@
       };
     };
   };
+  programs.awscli = {
+    enable = true;
+    settings = {
+      "default" = {
+        region = "eu-west-1";
+      };
+    };
+  };
   programs.bat.enable = true;
   programs.direnv = {
     enable = true;
@@ -260,7 +268,6 @@
       yapf
     ]);
   in with pkgs; [
-    awscli
     cachix
     clang
     coreutils
