@@ -201,6 +201,7 @@
       # Work around problem with env init clobbering EDITOR
       export EDITOR="emacsclient -nw -c"
       export PATH="$PATH:$HOME/.config/emacs/bin"
+      source ~/.op/plugins.sh
     '';
     oh-my-zsh = {
       enable = true;
@@ -439,6 +440,7 @@
   services.mako.enable = true;
 
   home.file.".octaverc".source = ./octaverc;
+  home.file.".op/plugins.sh".source = ./op/plugins.sh;
   xdg.configFile."doom/config.el".source = ./config/doom/config.el;
   xdg.configFile."doom/init.el".source = ./config/doom/init.el;
   xdg.configFile."doom/packages.el".source = ./config/doom/packages.el;
