@@ -286,6 +286,8 @@
     git-crypt
     gnumake
     graham33-scripts
+    hypridle
+    hyprlock
     imagemagick
     inkscape
     killall
@@ -444,6 +446,7 @@
   xdg.configFile."doom/config.el".source = ./config/doom/config.el;
   xdg.configFile."doom/init.el".source = ./config/doom/init.el;
   xdg.configFile."doom/packages.el".source = ./config/doom/packages.el;
+  xdg.configFile."hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
   xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
   xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
 
