@@ -104,6 +104,9 @@
     userName = "Graham Bennett";
     userEmail = "graham@grahambennett.org";
     extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
       pull = {
         rebase = true;
       };
