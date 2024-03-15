@@ -258,6 +258,7 @@
     myPython3 = pkgs.python3.withPackages (ps: with ps; [
       boto3
       click
+      isort
       numpy
       pandas
       pip
@@ -292,13 +293,17 @@
     inkscape
     killall
     libreoffice
+    markdownlint-cli2
+    mdl
     mpv
     myPython3
+    nix
     nix-output-monitor
     nix-prefetch-git
+    nixfmt
     nixpkgs-review
-    nix
     nmap
+    nodejs_21
     (ollama.override (lib.optionalAttrs cudaSupport {
       acceleration = "cuda";
     }))
@@ -308,6 +313,7 @@
     remmina
     ripgrep
     rubber
+    shellcheck
     socat
     sxiv
     texlab
