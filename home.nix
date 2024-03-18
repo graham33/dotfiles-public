@@ -158,6 +158,10 @@
     serverAliveInterval = 300;
     serverAliveCountMax = 2;
   };
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   programs.texlive = {
     enable = true;
     extraPackages = tpkgs: {
@@ -210,7 +214,6 @@
         "git"
         "vi-mode"
       ];
-      theme = "agnoster";
     };
     plugins = [
       {
