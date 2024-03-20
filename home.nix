@@ -161,6 +161,11 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
+    settings = {
+      aws = {
+        disabled = true;
+      };
+    };
   };
   programs.texlive = {
     enable = true;
