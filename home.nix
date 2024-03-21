@@ -33,56 +33,6 @@
 
   fonts.fontconfig.enable = true;
 
-  programs.autorandr = {
-    enable = true;
-    profiles.mobile = {
-      config = {
-        # Laptop screen
-        "eDP-1" = {
-          enable = true;
-          crtc = 1;
-          mode = "2560x1440";
-          position = "0x0";
-          primary = true;
-          rate = "60.00";
-        };
-      };
-      fingerprint = {
-        "eDP-1" = "00ffffffffffff0030ae40410000000031190104a51f1278ea4481af503eb5230e5054000000010101010101010101010101010101019b5e00a0a0a02c503020360036af1000001a9b5e00a0a0a02c503020360036af1000001a0000000f00ff093cff093c1e80004c830000000000fe0041544e4134304a5530312d302000a9";
-      };
-    };
-    profiles.docked = {
-      config = {
-        # Laptop screen
-        "eDP-1" = {
-          enable = false;
-        };
-        # Left portrait monitor
-        "DP-1" = {
-          enable = true;
-          crtc = 1;
-          mode = "2560x1440";
-          position = "0x0";
-          rate = "59.95";
-          rotate = "left";
-        };
-        # Main monitor
-        "DP-2-1" = {
-          enable = true;
-          crtc = 0;
-          mode = "3840x2160";
-          position = "1440x0";
-          primary = true;
-          rate = "30.00";
-        };
-      };
-      fingerprint = {
-        "eDP-1" = "00ffffffffffff0030ae40410000000031190104a51f1278ea4481af503eb5230e5054000000010101010101010101010101010101019b5e00a0a0a02c503020360036af1000001a9b5e00a0a0a02c503020360036af1000001a0000000f00ff093cff093c1e80004c830000000000fe0041544e4134304a5530312d302000a9";
-        "DP-1" = "00ffffffffffff0010ac50a14c474930191e0104a5371f783e5095af4f45a9260f5054a54b00714f8180a9c0a940d1c0e100d1000101565e00a0a0a029503020350029372100001a000000ff004a5853533832330a2020202020000000fc0044454c4c205532353230440a20000000fd00304b0a7828010a20202020202001fc02031df150101f200514041312110302161507060123091f0783010000023a801871382d40582c450029372100001ebf1600a08038134030203a0029372100001a7e3900a080381f4030203a0029372100001a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000005d";
-        "DP-2-1" = "00ffffffffffff0010acd6414c3639340b1f0103805e3578ea8b5ba4554e9e270e474aa54b00d100d1c0b300a94081808100714fe1c0b8ce0050f0705a8018108a00ad113200001e000000ff004a4d43575138330a2020202020000000fc0044454c4c205534333230510a20000000fd001d4c1e8c3c000a20202020202001ec02033af15161605f5e5d101f2005140413121103020123091f07830100006d030c001000183c20006001020367d85dc401788001e20f03e2006b08e80030f2705a80b0588a00ad113200001e565e00a0a0a0295030203500ad113200001a114400a080001f5030203600ad113200001a00000000000000000000000000000019";
-      };
-    };
-  };
   programs.awscli = {
     enable = true;
     settings = {
@@ -121,8 +71,6 @@
       push = {
         default = "simple";
         autoSetupRemote = true;
-      };
-      safe = {
       };
     };
   };
@@ -284,7 +232,6 @@
     fd
     ffmpeg-full
     font-awesome
-    fira-code
     fira-code-nerdfont
     freerdp
     gdb

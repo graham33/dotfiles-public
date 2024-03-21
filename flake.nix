@@ -23,9 +23,6 @@
       pkgs = import nixpkgs {
         config = {
           allowUnfree = true;
-          permittedInsecurePackages = [
-            "openssl-1.1.1v"
-          ];
         };
         overlays = let
           pkgs-dropbox-patch = import nixpkgs-dropbox-patch {
@@ -37,9 +34,6 @@
         in [
           emacs-overlay.overlay
           (self: super: {
-            freerdp = super.freerdp.override {
-              #openssl = self.openssl_1_1;
-            };
             inherit (pkgs-dropbox-patch) dropbox;
           })
         ];
