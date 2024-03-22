@@ -66,17 +66,6 @@
   };
   programs.htop.enable = true;
   programs.jq.enable = true;
-  programs.kitty = {
-    enable = true;
-    extraConfig = ''
-      enable_audio_bell no
-    '';
-    font = {
-      name = "FiraCode Nerd Font Mono Reg";
-      size = 14;
-    };
-    theme = "Solarized Dark";
-  };
   programs.ssh = {
     enable = true;
     serverAliveInterval = 300;
@@ -89,12 +78,6 @@
       aws = {
         disabled = true;
       };
-    };
-  };
-  programs.texlive = {
-    enable = true;
-    extraPackages = tpkgs: {
-      inherit (tpkgs) catchfile crossword lastpage newlfm patchcmd scheme-small svg titling transparent trimspaces;
     };
   };
   programs.tmux = {
@@ -136,17 +119,6 @@
         "vi-mode"
       ];
     };
-    plugins = [
-      {
-        name = "nix-shell";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.7.0";
-          sha256 = "sha256-oQpYKBt0gmOSBgay2HgbXiDoZo5FoUKwyHSlUrOAP5E=";
-        };
-      }
-    ];
   };
 
   services.emacs = {
@@ -176,29 +148,18 @@
     ]);
   in with pkgs; [
     cachix
-    clang
     coreutils
     fd
-    ffmpeg-full
-    font-awesome
     fira-code-nerdfont
     freerdp
     gdb
-    gimp
-    gnome.nautilus
     gnuplot
-    google-chrome
     git-crypt
     gnumake
-    hypridle
-    hyprlock
     imagemagick
-    inkscape
     killall
-    libreoffice
     markdownlint-cli2
     mdl
-    mpv
     myPython3
     nix
     nix-output-monitor
@@ -206,31 +167,18 @@
     nixfmt
     nixpkgs-review
     nmap
-    nodejs_21
-    (ollama.override (lib.optionalAttrs cudaSupport {
-      acceleration = "cuda";
-    }))
-    pavucontrol
-    poppler_utils
     pstree
-    remmina
     ripgrep
     rubber
     shellcheck
     socat
-    sxiv
-    texlab
     traceroute
     unzip
-    vlc
-    wally-cli
     waypipe
     websocat
     wget
     whois
-    x2goclient
     yarn2nix
-    zoom-us
   ];
 
   home.sessionVariables = {

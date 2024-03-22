@@ -44,6 +44,7 @@
         modules = [
           ./home.nix
           ./user-config.nix
+          ./bloat.nix
         ];
         extraSpecialArgs = {
           inherit cudaSupport;
