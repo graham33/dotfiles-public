@@ -4,26 +4,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "graham";
-  home.homeDirectory = "/home/graham";
-
   nix = {
     package = pkgs.nix;
     settings = {
       experimental-features = [
         "nix-command"
         "flakes"
-      ];
-      substituters = [
-        "https://cache.nixos.org"
-        "https://cache.nixos.org/"
-        "https://graham33.cachix.org"
-      ];
-      trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "graham33.cachix.org-1:DqH72VpwSrACa3+L9eqh4bixjWx9IQUaxQtRh4gtkX8="
       ];
     };
   };
@@ -35,11 +21,6 @@
 
   programs.awscli = {
     enable = true;
-    settings = {
-      "default" = {
-        region = "eu-west-1";
-      };
-    };
   };
   programs.bat.enable = true;
   programs.direnv = {
@@ -59,12 +40,7 @@
   };
   programs.git = {
     enable = true;
-    userName = "Graham Bennett";
-    userEmail = "graham@grahambennett.org";
     extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
       pull = {
         rebase = true;
       };
@@ -124,17 +100,9 @@
   programs.tmux = {
     enable = true;
     escapeTime = 0;
-    extraConfig = ''
-      set -g mouse on
-
-      set -ag terminal-overrides ",xterm-kitty:Tc"
-      set-option -ag update-environment "WAYLAND_DISPLAY"
-
-      # Update WAYLAND_DISPLAY on attach
-      set-hook -g client-attached 'run-shell update_wayland_display.sh'
-    '';
     historyLimit = 100000;
     keyMode = "vi";
+    mouse = true;
     plugins = with pkgs.tmuxPlugins; [
       {
         plugin = tmux-colors-solarized;
@@ -181,9 +149,6 @@
     ];
   };
 
-  services.dropbox = {
-    enable = true;
-  };
   services.emacs = {
     enable = true;
     package = pkgs.emacs-git;
@@ -193,24 +158,8 @@
     socketActivation.enable = true;
     startWithUserSession = "graphical";
   };
-  services.gpg-agent = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
   home.packages = let
-    graham33-scripts = pkgs.stdenv.mkDerivation {
-      name = "graham33-scripts";
-      src = pkgs.fetchgit {
-        url = "https://github.com/graham33/scripts";
-        rev = "6dfe86fe4e82ba759ddf5b3cad7f0375b6d6da09";
-        sha256 = "sha256-4iiNxaFznnBO5G56dkHP00e/4JxO8cIu1KHnliZYPjw=";
-      };
-      buildCommand = ''
-      mkdir -p $out/bin
-      cp $src/* $out/bin
-    ''   ;
-    };
     myPython3 = pkgs.python3.withPackages (ps: with ps; [
       boto3
       click
@@ -241,7 +190,6 @@
     google-chrome
     git-crypt
     gnumake
-    graham33-scripts
     hypridle
     hyprlock
     imagemagick
@@ -302,105 +250,6 @@
   # Let home-manager automatically start systemd user services.
   # Will eventually become the new default.
   systemd.user.startServices = "sd-switch";
-
-  # Hyprland
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-    };
-    systemd.enable = true;
-    xwayland.enable = true;
-
-    extraConfig = builtins.readFile ./hyprland.conf;
-  };
-  programs.waybar = {
-    enable = true;
-    settings = {
-      mainBar = {
-        layer = "top";
-        position = "bottom";
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-middle = [ ];
-        modules-right = [ "pulseaudio" "network" "cpu" "memory" "disk" "temperature" "battery" "clock" "tray" ];
-        battery = {
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
-          format-alt = "{time} {icon}";
-          format-icons = ["" "" "" "" ""];
-        };
-        clock = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%Y-%m-%d}";
-        };
-        cpu = {
-          format = "{usage}% ";
-          tooltip = false;
-        };
-        disk = {
-          format = "{percentage_free}% ";
-        };
-        "hyprland/window" = {
-          max-length = 200;
-          separate-outputs = true;
-        };
-        "hyprland/workspaces" = {
-          format = "{icon}";
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-        };
-        memory = {
-          format = "{}% ";
-        };
-        network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
-            format-ethernet = "{ipaddr}/{cidr} ";
-            tooltip-format = "{ifname} via {gwaddr} ";
-            format-linked = "{ifname} (No IP) ";
-            format-disconnected = "Disconnected ⚠";
-            format-alt = "{ifname}: {ipaddr}/{cidr}";
-        };
-        pulseaudio = {
-          format = "{volume}% {icon} {format_source}";
-            format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {format_source}";
-            format-muted = " {format_source}";
-            format-source = "{volume}% ";
-            format-source-muted = "";
-            format-icons = {
-              headphone = "";
-              hands-free = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
-              default = ["" "" ""];
-            };
-            on-click = "pavucontrol";
-        };
-        temperature = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = ["" "" ""];
-        };
-      };
-    };
-    systemd = {
-      enable = true;
-      target = "hyprland-session.target";
-    };
-  };
-  programs.wofi.enable = true;
-  services.gammastep = {
-    enable = true;
-    provider = "geoclue2";
-    tray = true;
-  };
-  services.mako.enable = true;
 
   home.file.".octaverc".source = ./octaverc;
   home.file.".op/plugins.sh".source = ./op/plugins.sh;

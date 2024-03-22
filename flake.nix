@@ -39,26 +39,20 @@
         ];
         inherit system;
       };
+      mkHomeManagerConfiguration = cudaSupport: home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home.nix
+          ./user-config.nix
+        ];
+        extraSpecialArgs = {
+          inherit cudaSupport;
+        };
+      };
     in {
       homeConfigurations = {
-        graham = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./home.nix
-          ];
-          extraSpecialArgs = {
-            cudaSupport = true;
-          };
-        };
-        graham-no-cuda = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./home.nix
-          ];
-          extraSpecialArgs = {
-            cudaSupport = false;
-          };
-        };
+        graham = mkHomeManagerConfiguration true;
+        graham-no-cuda = mkHomeManagerConfiguration false;
       };
     };
 }
