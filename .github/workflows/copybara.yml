@@ -16,5 +16,4 @@ jobs:
           sot_repo: graham33/dotfiles
           destination_repo: graham33/dotfiles-public
           destination_branch: main
-          push_exclude: ".github user-config.nix hyprland.conf octaverc config/hypr config/vlc config/zoomus.conf"
-          copybara_options: "--init-history"
+          push_exclude: ".github user-config.nix hyprland.conf octaverc config/hypr/** config/vlc/** config/zoomus.conf"
