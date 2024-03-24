@@ -105,20 +105,14 @@
   };
   programs.zsh = {
     enable = true;
+    defaultKeymap = "viins";
     initExtra = ''
       # Work around problem with env init clobbering EDITOR
       export EDITOR="emacsclient -nw -c"
       export PATH="$PATH:$HOME/.config/emacs/bin"
+      # 1Password plugins
       source ~/.op/plugins.sh
     '';
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "direnv"
-        "git"
-        "vi-mode"
-      ];
-    };
   };
 
   services.emacs = {
