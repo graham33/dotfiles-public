@@ -9,7 +9,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: olivr/copybara-action@v1.2.3
+      - uses: thatdot/copybara-action@62760d38c195b5d110ebd2c6309ddc272769f885
         with:
           ssh_key: ${{ secrets.SSH_KEY }}
           access_token: ${{ secrets.GH_TOKEN }}
