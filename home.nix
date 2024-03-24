@@ -104,6 +104,10 @@
 
       # powerlevel10k
       source ~/.p10k.zsh
+
+      # Key bindings
+      bindkey "^P" up-line-or-search
+      bindkey "^N" down-line-or-search
     '';
     antidote = {
       enable = true;
