@@ -20,6 +20,7 @@
     pavucontrol
     poppler_utils
     remmina
+    rubber
     sxiv
     texlab
     vlc
@@ -46,4 +47,7 @@
       inherit (tpkgs) catchfile crossword lastpage newlfm patchcmd scheme-small svg titling transparent trimspaces;
     };
   };
+
+  xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
+  xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
 }

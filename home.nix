@@ -139,14 +139,11 @@
       yapf
     ]);
   in with pkgs; [
-    cachix
     coreutils
     fd
     fira-code-nerdfont
-    freerdp
     gdb
     gnuplot
-    git-crypt
     gnumake
     imagemagick
     killall
@@ -161,16 +158,13 @@
     nmap
     pstree
     ripgrep
-    rubber
     shellcheck
     socat
     traceroute
     unzip
-    waypipe
     websocat
     wget
     whois
-    yarn2nix
   ];
 
   home.sessionVariables = {
@@ -191,15 +185,9 @@
   # Will eventually become the new default.
   systemd.user.startServices = "sd-switch";
 
-  home.file.".octaverc".source = ./octaverc;
-  home.file.".op/plugins.sh".source = ./op/plugins.sh;
   xdg.configFile."doom/config.el".source = ./config/doom/config.el;
   xdg.configFile."doom/init.el".source = ./config/doom/init.el;
   xdg.configFile."doom/packages.el".source = ./config/doom/packages.el;
-  xdg.configFile."hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
-  xdg.configFile."vlc/vlcrc".source = ./config/vlc/vlcrc;
-  xdg.configFile."zoomus.conf".source = ./config/zoomus.conf;
 
   home.activation = {
     syncDoomEmacs = lib.hm.dag.entryAfter ["writeBoundary"] ''

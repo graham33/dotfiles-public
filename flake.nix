@@ -39,11 +39,12 @@
         ];
         inherit system;
       };
-      mkHomeManagerConfiguration = cudaSupport: home-manager.lib.homeManagerConfiguration {
+      mkHomeManagerConfiguration = bloat: cudaSupport: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
           ./home.nix
           ./user-config.nix
+        ] ++ pkgs.lib.optionals bloat [
           ./bloat.nix
         ];
         extraSpecialArgs = {
@@ -52,8 +53,9 @@
       };
     in {
       homeConfigurations = {
-        graham = mkHomeManagerConfiguration true;
-        graham-no-cuda = mkHomeManagerConfiguration false;
+        graham = mkHomeManagerConfiguration true true;
+        graham-no-bloat = mkHomeManagerConfiguration true false;
+        graham-no-cuda = mkHomeManagerConfiguration true false;
       };
     };
 }
