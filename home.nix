@@ -71,15 +71,6 @@
     serverAliveInterval = 300;
     serverAliveCountMax = 2;
   };
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      aws = {
-        disabled = true;
-      };
-    };
-  };
   programs.tmux = {
     enable = true;
     escapeTime = 0;
@@ -110,8 +101,18 @@
       # Work around problem with env init clobbering EDITOR
       export EDITOR="emacsclient -nw -c"
       export PATH="$PATH:$HOME/.config/emacs/bin"
+
+      # powerlevel10k
+      source ~/.p10k.zsh
     '';
+    antidote = {
+      enable = true;
+      plugins = [
+        "romkatv/powerlevel10k"
+      ];
+    };
   };
+  home.file.".p10k.zsh".source = ./p10k.zsh;
 
   services.emacs = {
     enable = true;
