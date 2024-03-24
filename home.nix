@@ -110,8 +110,6 @@
       # Work around problem with env init clobbering EDITOR
       export EDITOR="emacsclient -nw -c"
       export PATH="$PATH:$HOME/.config/emacs/bin"
-      # 1Password plugins
-      source ~/.op/plugins.sh
     '';
   };
 
