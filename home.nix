@@ -158,7 +158,7 @@
     nix
     nix-output-monitor
     nix-prefetch-git
-    nixfmt
+    nixfmt-classic
     nixpkgs-review
     nmap
     pstree

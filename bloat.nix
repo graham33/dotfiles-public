@@ -13,7 +13,7 @@
     inkscape
     libreoffice
     mpv
-    nodejs_21
+    nodejs_22
     (ollama.override (lib.optionalAttrs cudaSupport {
       acceleration = "cuda";
     }))
