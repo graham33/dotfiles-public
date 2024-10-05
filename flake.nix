@@ -12,30 +12,17 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-dropbox-patch = {
-      url = "github:nixos/nixpkgs/refs/pull/277422/merge";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, emacs-overlay, nixpkgs-dropbox-patch, ... }:
+  outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         config = {
           allowUnfree = true;
         };
-        overlays = let
-          pkgs-dropbox-patch = import nixpkgs-dropbox-patch {
-            config = {
-              allowUnfree = true;
-            };
-            inherit system;
-          };
-        in [
+        overlays = [
           emacs-overlay.overlay
-          (self: super: {
-            inherit (pkgs-dropbox-patch) dropbox;
-          })
         ];
         inherit system;
       };
