@@ -33,6 +33,7 @@
     enable = true;
     extraConfig = ''
       enable_audio_bell no
+      clipboard_control write-primary write-clipboard no-append
     '';
     font = {
       name = "FiraCode Nerd Font Mono Reg";
