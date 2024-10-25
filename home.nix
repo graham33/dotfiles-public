@@ -1,6 +1,8 @@
 { config, pkgs, lib, cudaSupport, ... }:
 
-{
+let
+  emacs = pkgs.emacs-unstable;
+in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -31,7 +33,7 @@
   };
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs-git;
+    package = emacs;
   };
   programs.fzf = {
     enable = true;
@@ -120,7 +122,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs-git;
+    package = emacs;
     client = {
       enable = true;
     };

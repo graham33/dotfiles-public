@@ -12,9 +12,13 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, emacs-overlay, ... }:
+  outputs = { nixpkgs, home-manager, emacs-overlay, hyprland, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -35,7 +39,7 @@
           ./bloat.nix
         ];
         extraSpecialArgs = {
-          inherit cudaSupport;
+          inherit cudaSupport hyprland;
         };
       };
     in {

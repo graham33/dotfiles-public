@@ -6,7 +6,7 @@
     ffmpeg-full
     font-awesome
     gimp
-    gnome.nautilus
+    nautilus
     google-chrome
     hypridle
     hyprlock
@@ -38,7 +38,7 @@
       name = "FiraCode Nerd Font Mono Reg";
       size = 14;
     };
-    theme = "Solarized Dark";
+    themeFile = "Solarized_Dark";
   };
 
   programs.texlive = {
